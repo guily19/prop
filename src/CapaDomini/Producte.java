@@ -11,31 +11,18 @@ package CapaDomini;
  * @author guillem
  */
 public class Producte {
-    private int id = 0;
-    private double preu = 0;
-    private double grau_similitud = 0;
+    private int id;
+    private double grau_similitud;
     
-    public Producte(){};
+    public Producte(){
+        this.id = 0;
+        this.grau_similitud = 0;
+    };
     
-    public Producte(int id, double preu,double grau){
+    public Producte(int id,double grau){
         setId(id);
-        setPreu(preu);
         setGrau_similitud(grau);
     };
-
-    /**
-     * @return the preu
-     */
-    public double getPreu() {
-        return preu;
-    }
-
-    /**
-     * @param preu the preu to set
-     */
-    public void setPreu(double preu) {
-        this.preu = preu;
-    }
 
     /**
      * @return the grau_similitud
