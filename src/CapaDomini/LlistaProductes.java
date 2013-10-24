@@ -6,17 +6,32 @@
 
 package CapaDomini;
 
+
+import java.util.*;
 /**
  *
  * @author guillem
  */
 public class LlistaProductes {
-    private Producte[] ArrayProductes;
+    
+    private ArrayList <Producte> arrayproductes = new ArrayList<Producte>();
     private int contaproductes = 0;
     
     public LlistaProductes(){};
     
-    public void LlegitLlistaProductes(Producte[] ArrayProductes, int contaproductes){
-        
+    public void AfegirProducte(Producte producte){
+        this.arrayproductes.add(producte);
+        this.contaproductes = arrayproductes.size();
     }
+    
+    public void BorrarProductePosicio(int posicio){
+        this.arrayproductes.remove(posicio);
+        this.contaproductes = arrayproductes.size();
+    }
+    
+    public void BorrarProducte(Producte producte){
+        this.arrayproductes.remove(producte);
+        this.contaproductes = arrayproductes.size();
+    }
+    
 }
