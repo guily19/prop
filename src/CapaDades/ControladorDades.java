@@ -18,10 +18,10 @@ import java.util.ArrayList;
 /**
  *
  * @author Toni
- * @version 1.0
+ * @version 2.0
  * 
- * ControladorDades controla les lectures i escritures a archius
- * L'archiu en el qual es vol llegir o escriure sempre ha de existir, en cas
+ * ControladorDades controla les lectures i escritures a arxius
+ * L'arxiu en el qual es vol llegir o escriure sempre ha de existir, en cas
  * contrari saltara FileNotFoundException
  */
 
@@ -37,10 +37,10 @@ public class ControladorDades {
      * 
      * 
      * @param file
-     * nom de l'archiu que es vol llegir
+     * nom de l'arxiu que es vol llegir
      * @return
      * Retorna un ArrayList de vector String, on cada String[] és una linia
-     * de l'archiu. Ex:
+     * de l'arxiu. Ex:
      *                  file:
      *                          1;LLet;Pascual;Semidesnatada
      *                          2;Flan;Danone;D'ou
@@ -60,8 +60,19 @@ public class ControladorDades {
         return params;
     }
     
+    public String[] readLineFile(String file) throws FileNotFoundException, IOException{
+        
+        FileReader fr = new FileReader(file);
+        BufferedReader in = new BufferedReader(fr);
+        String s = in.readLine();
+        int n = s.split(";").length;
+        String [] ret= new String[n];
+        in.close();
+        return ret;
+    }
+    
     /**
-     * Escriu una linia al final del archiu amb nom = file
+     * Escriu una linia al final del arxiu amb nom = file
      * String[] -> {"1", "Aigua", "FontVella"}
      * Al final de file -> 1;Aigua;FontVella
      * @param params
@@ -69,7 +80,7 @@ public class ControladorDades {
      * @param n
      * Tamany del String[]
      * @param file
-     * Nom del archiu
+     * Nom del arxiu
      * @throws IOException 
      */
     public void writeLineFile(String[] params,int n, String file) throws IOException{
@@ -84,15 +95,15 @@ public class ControladorDades {
     /**
      * Escriu varies linies al final de file
      * @param params
-     * ArrayList de vector String, on cada String[] és una linia
-     * de l'archiu
+     * ArrayList de vector String, on cada String[] és una linia de l'arxiu
      * @param n
      * Tamany de tots els String[]
      * @param file
-     * Nom de l'archiu
+     * Nom de l'arxiu
      * @throws IOException 
      */
-    public void writeFile(ArrayList<String[]> params,int n, String file) throws IOException{
+    public void writeFile(ArrayList<String[]> params,int n, String file) throws
+    IOException{
         FileWriter fw= new FileWriter(file, true);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter out = new PrintWriter(bw);
@@ -103,5 +114,15 @@ public class ControladorDades {
         }
         out.close();     
     }
+    
+    public boolean changeLineFile(String[] original, String[] param, int n,
+    String file) throws FileNotFoundException{
+        String s;
+        s = original[0];
+        for(int i = 1; i < n; ++i) s = s.concat(";" + original[i]);
+        FileReader fr = new FileReader(file);
+        BufferedReader in = new BufferedReader(fr);
+        ArrayList<String> aux = new ArrayList();
+        while()
 
 }
