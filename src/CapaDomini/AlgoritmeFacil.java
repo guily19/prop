@@ -13,10 +13,14 @@ import java.util.*;
  * @author guillem
  */
 public class AlgoritmeFacil {
-    private int[][] matriusimetrica;
+    private Graf graf;
     
-    public void AlgoritmeFacil(int fil, int col){
-        this.matriusimetrica = new int[fil][col];
+    
+    
+    
+    
+    public void AlgoritmeFacil(Graf graf){
+        this.graf = graf;
     }
     
     /**
