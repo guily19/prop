@@ -19,7 +19,15 @@ public class Graf {
         this.camins_minims = pq;
     }
     
-    public int[][] consultar_graf (){
+    public void llegir_graf(){
+        
+    }
+    
+    public void afegir_element(){
+        
+    }
+    
+    public int[][] consultar_matriu (){
         return this.matriusimetrica;
     }
     
