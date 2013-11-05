@@ -8,9 +8,22 @@ import java.util.*;
  *
  * @author Guillem
  */
+
+class GrauMinim{
+    int id1;
+    int id2;
+    int grau;
+};
+
 public class Graf {
     private int[][] matriusimetrica;
-    private PriorityQueue camins_minims;
+    private PriorityQueue <GrauMinim>camins_minims;
+    
+    private void llegir_matriu(){
+    };
+    
+    private void llegir_priorityqueue(){
+    }
     
     public Graf(){}
     
@@ -20,7 +33,8 @@ public class Graf {
     }
     
     public void llegir_graf(){
-        
+        llegir_matriu();
+        llegir_priorityqueue();
     }
     
     public void afegir_element(){
