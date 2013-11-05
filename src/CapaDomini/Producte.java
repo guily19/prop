@@ -12,47 +12,29 @@ package CapaDomini;
  */
 public class Producte {
     private int id;
-    private double grau_similitud;
+    private String nom;
+    private String tipus;
+    private String subtipus;
+    private String conservacio;
     
-    public Producte(){
-        this.id = 0;
-        this.grau_similitud = 0;
-    };
+  
     
-    public Producte(int id,double grau){
-        setId(id);
-        setGrau_similitud(grau);
-    };
-
-    /**
-     * @return the grau_similitud
-     */
-    public double getGrau_similitud() {
-        return grau_similitud;
-    }
-
-    /**
-     * @param grau_similitud the grau_similitud to set
-     */
-    public void setGrau_similitud(double grau_similitud) {
-        this.grau_similitud = grau_similitud;
-    }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
+    public Producte(int id, String nom, String tipus, String subtipus, String 
+    conservacio){
         this.id = id;
+        this.nom = nom;
+        this.tipus = tipus;
+        this.subtipus = subtipus;
+        this.conservacio = conservacio;
+    };
+
+
+    /**
+     * @param s
+     *
+     */
+    public void setConservacio(String s) {
+        this.conservacio = s;
     }
-    
-   
-    
-    
+
 }
