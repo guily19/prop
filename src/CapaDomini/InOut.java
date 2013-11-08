@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package CapaGrafica;
+package CapaDomini;
 
 import java.io.*;
 
