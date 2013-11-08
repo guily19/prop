@@ -30,6 +30,7 @@ public class AlgoritmeFacil {
     public ArrayList <Integer> posible_solucio(){
         ArrayList <Integer> sol = new ArrayList<Integer>();
         //Algorithmo
+        this.graf.
         
         return sol;
     }
