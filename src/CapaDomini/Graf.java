@@ -14,10 +14,10 @@ public class Graf {
     private PriorityQueue <GrauMinim>camins_minims;
     
     private void llegir_matriu_i_queue() throws Exception{
-        GrauMinim s = new GrauMinim();
         InOut ob = new InOut();
         for(int i = 0; i <  matriusimetrica.length; ++i){
             for(int j = 0; j < matriusimetrica.length; ++j){
+                GrauMinim s = new GrauMinim();
                 matriusimetrica[i][j] = ob.readint();
                 s.id1 = i;
                 s.id2 = j;
@@ -34,6 +34,13 @@ public class Graf {
     
     public Graf(int[][] matriu){
         this.matriusimetrica = matriu;
+        int tam = matriu.length;
+        this.camins_minims = new PriorityQueue<GrauMinim>(tam,
+            new Comparator<GrauMinim>( ){
+                public int compare(GrauMinim a, GrauMinim b){
+                    return a.grau - b.grau;
+                }
+        });
         GrauMinim s = new GrauMinim();
         for(int i = 0; i < matriu.length; ++i){
             for(int j = 0; j < matriu.length; ++j){
@@ -47,8 +54,15 @@ public class Graf {
     
     public void llegir_graf() throws Exception{
         InOut ob = new InOut();
+        ob.write("Escribir tamany matriu: ");
         int tam = ob.readint();
         this.matriusimetrica = new int[tam][tam];
+        this.camins_minims = new PriorityQueue<GrauMinim>(tam,
+            new Comparator<GrauMinim>( ){
+                public int compare(GrauMinim a, GrauMinim b){
+                    return a.grau - b.grau;
+                }
+        });
         llegir_matriu_i_queue();
     }
     
