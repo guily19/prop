@@ -115,14 +115,11 @@ public class ControladorDades {
         out.close();     
     }
     
-    public boolean changeLineFile(String[] original, String[] param, int n,
-    String file) throws FileNotFoundException{
-        String s;
-        s = original[0];
-        for(int i = 1; i < n; ++i) s = s.concat(";" + original[i]);
-        FileReader fr = new FileReader(file);
-        BufferedReader in = new BufferedReader(fr);
-        ArrayList<String> aux = new ArrayList();
-        while()
-
+    public void changeLineFile(String[] original, String[] param, int n,
+    String file) throws FileNotFoundException, IOException{
+        ArrayList<String[]> aux = readFile(file);
+        aux.remove(original);
+        aux.add(param);
+        writeFile(aux,n,file);
+    }
 }
