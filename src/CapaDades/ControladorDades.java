@@ -60,13 +60,20 @@ public class ControladorDades {
         return params;
     }
     
+    /**
+     * 
+     * @param file
+     * @return Retorna la primera linea del arxiu = file
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+    
     public String[] readLineFile(String file) throws FileNotFoundException, IOException{
         
         FileReader fr = new FileReader(file);
         BufferedReader in = new BufferedReader(fr);
         String s = in.readLine();
-        int n = s.split(";").length;
-        String [] ret= new String[n];
+        String [] ret= s.split(";");
         in.close();
         return ret;
     }
@@ -84,7 +91,7 @@ public class ControladorDades {
      * @throws IOException 
      */
     public void writeLineFile(String[] params,int n, String file) throws IOException{
-        FileWriter fw= new FileWriter(file, true);
+        FileWriter fw= new FileWriter(file,true);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter out = new PrintWriter(bw);
         out.print(params[0]);
@@ -93,7 +100,7 @@ public class ControladorDades {
         out.close();
     }
     /**
-     * Escriu varies linies al final de file
+     * Sobreescriu/Escriu varies linies de file
      * @param params
      * ArrayList de vector String, on cada String[] és una linia de l'arxiu
      * @param n
@@ -104,7 +111,7 @@ public class ControladorDades {
      */
     public void writeFile(ArrayList<String[]> params,int n, String file) throws
     IOException{
-        FileWriter fw= new FileWriter(file, true);
+        FileWriter fw= new FileWriter(file, false);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter out = new PrintWriter(bw);
         for (int i = 0; i < params.size(); ++i){
@@ -114,12 +121,32 @@ public class ControladorDades {
         }
         out.close();     
     }
-    
+/**
+ * Intercanvia linies de l'arxiu
+ * @param original linia a cambiar
+ * @param param  linia substituta
+ * @param n tamany, en parametres, de les linies
+ * @param file nom de l'arxiu a modificar
+ * @throws FileNotFoundException
+ * @throws IOException 
+ */
     public void changeLineFile(String[] original, String[] param, int n,
     String file) throws FileNotFoundException, IOException{
-        ArrayList<String[]> aux = readFile(file);
-        aux.remove(original);
-        aux.add(param);
-        writeFile(aux,n,file);
+        ArrayList<String[] > params = new ArrayList();
+        FileReader fr = new FileReader(file);
+        BufferedReader in = new BufferedReader(fr);
+        String s;
+        while ((s=in.readLine()) != null){
+            String[] aux= s.split(";");
+            boolean dif = false;
+            for (int i = 0; i<n && !dif; ++i){
+                dif = (!aux[i].equals(original[i])); 
+            }
+            if (!dif) params.add(param);
+            else params.add(aux);
+        }
+        in.close();
+        writeFile(params,n,file);
+        
     }
 }
