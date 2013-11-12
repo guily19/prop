@@ -18,7 +18,7 @@ public class Graf {
         for(int i = 0; i <  matriusimetrica.length; ++i){
             for(int j = 0; j < matriusimetrica.length; ++j){
                 matriusimetrica[i][j] = ob.readint();
-                if(i != j){
+                if(i != j && i < j){
                     GrauMinim s = new GrauMinim();
                     s.id1 = i;
                     s.id2 = j;
