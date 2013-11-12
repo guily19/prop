@@ -30,7 +30,19 @@ public class AlgoritmeFacil {
     public ArrayList <Integer> posible_solucio(){
         ArrayList <Integer> sol = new ArrayList<Integer>();
         //Algorithmo
-        this.graf.
+        int[][] matriu = graf.consultar_matriu();
+        PriorityQueue<GrauMinim> cua = graf.consultar_queue_minims();
+        if(matriu.length > 1){
+            int or = cua.element().id1;
+            int ds = cua.element().id2;
+            cua.poll();
+            sol.add(or);
+            sol.add(ds);
+            boolean[] vis = new boolean[matriu.length];
+            vis[or] = true;
+            vis[ds] = true;
+            
+        }
         
         return sol;
     }

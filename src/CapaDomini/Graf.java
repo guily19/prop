@@ -17,15 +17,18 @@ public class Graf {
         InOut ob = new InOut();
         for(int i = 0; i <  matriusimetrica.length; ++i){
             for(int j = 0; j < matriusimetrica.length; ++j){
-                GrauMinim s = new GrauMinim();
                 matriusimetrica[i][j] = ob.readint();
-                s.id1 = i;
-                s.id2 = j;
-                s.grau = this.matriusimetrica[i][j];
-                this.camins_minims.add(s);
+                if(i != j){
+                    GrauMinim s = new GrauMinim();
+                    s.id1 = i;
+                    s.id2 = j;
+                    s.grau = this.matriusimetrica[i][j];
+                    this.camins_minims.add(s);
+                }
+        
             }
         }
-    };
+ };
     
     private void llegir_priorityqueue(){
     };
@@ -44,10 +47,12 @@ public class Graf {
         GrauMinim s = new GrauMinim();
         for(int i = 0; i < matriu.length; ++i){
             for(int j = 0; j < matriu.length; ++j){
-                s.id1 = i;
-                s.id2 = j;
-                s.grau = this.matriusimetrica[i][j];
-                this.camins_minims.add(s);
+                if(i != j){
+                    s.id1 = i;
+                    s.id2 = j;
+                    s.grau = this.matriusimetrica[i][j];
+                    this.camins_minims.add(s);
+                }
             }
         }
     }
