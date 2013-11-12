@@ -17,7 +17,7 @@ public class Producte {
     private String subtipus;
     private String conservacio;
     
-  
+    public Producte(){}
     
     public Producte(int id, String nom, String tipus, String subtipus, String 
     conservacio){
@@ -27,14 +27,34 @@ public class Producte {
         this.subtipus = subtipus;
         this.conservacio = conservacio;
     };
-
-
-    /**
-     * @param s
-     *
-     */
-    public void setConservacio(String s) {
-        this.conservacio = s;
+    
+    public void llegir_producte() throws Exception{
+        InOut ob = new InOut();
+        id = ob.readint();
+        nom = ob.readname();
+        tipus = ob.readname();
+        subtipus = ob.readname();
+        conservacio = ob.readname();
+    }
+    
+    public void escriure_producte() throws Exception{
+        InOut ob = new InOut();
+        ob.write("ID = ");
+        ob.write(id);
+        ob.write("\n");
+        ob.write("Nom: ");
+        ob.write(nom);
+        ob.write("\n");
+        ob.write("Tipus: ");
+        ob.write(tipus);
+        ob.write("\n");
+        ob.write("Subtipus: ");
+        ob.write(subtipus);
+        ob.write("\n");
+        ob.write("Conservació: ");
+        ob.write(conservacio);
+        ob.write("\n");
+        
     }
 
 }
