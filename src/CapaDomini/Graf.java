@@ -12,7 +12,8 @@ import java.util.*;
 public class Graf {
     private int[][] matriusimetrica;
     private PriorityQueue <GrauMinim>camins_minims;
-    
+
+    /*
     private void llegir_matriu_i_queue() throws Exception{
         InOut ob = new InOut();
         for(int i = 0; i <  matriusimetrica.length; ++i){
@@ -29,9 +30,8 @@ public class Graf {
             }
         }
  };
+    */
     
-    private void llegir_priorityqueue(){
-    };
     
     public Graf(){}
     
@@ -56,7 +56,7 @@ public class Graf {
             }
         }
     }
-    
+/*   
     public void llegir_graf() throws Exception{
         InOut ob = new InOut();
         ob.write("Escribir tamany matriu: ");
@@ -70,10 +70,7 @@ public class Graf {
         });
         llegir_matriu_i_queue();
     }
-    
-    public void afegir_element(){
-        
-    }
+  */  
     
     public int[][] consultar_matriu (){
         return this.matriusimetrica;
