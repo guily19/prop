@@ -27,34 +27,75 @@ public class Producte {
         this.subtipus = subtipus;
         this.conservacio = conservacio;
     };
-    
-    public void llegir_producte() throws Exception{
-        InOut ob = new InOut();
-        id = ob.readint();
-        nom = ob.readname();
-        tipus = ob.readname();
-        subtipus = ob.readname();
-        conservacio = ob.readname();
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
-    
-    public void escriure_producte() throws Exception{
-        InOut ob = new InOut();
-        ob.write("ID = ");
-        ob.write(id);
-        ob.write("\n");
-        ob.write("Nom: ");
-        ob.write(nom);
-        ob.write("\n");
-        ob.write("Tipus: ");
-        ob.write(tipus);
-        ob.write("\n");
-        ob.write("Subtipus: ");
-        ob.write(subtipus);
-        ob.write("\n");
-        ob.write("Conservació: ");
-        ob.write(conservacio);
-        ob.write("\n");
-        
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @param nom the nom to set
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * @return the tipus
+     */
+    public String getTipus() {
+        return tipus;
+    }
+
+    /**
+     * @param tipus the tipus to set
+     */
+    public void setTipus(String tipus) {
+        this.tipus = tipus;
+    }
+
+    /**
+     * @return the subtipus
+     */
+    public String getSubtipus() {
+        return subtipus;
+    }
+
+    /**
+     * @param subtipus the subtipus to set
+     */
+    public void setSubtipus(String subtipus) {
+        this.subtipus = subtipus;
+    }
+
+    /**
+     * @return the conservacio
+     */
+    public String getConservacio() {
+        return conservacio;
+    }
+
+    /**
+     * @param conservacio the conservacio to set
+     */
+    public void setConservacio(String conservacio) {
+        this.conservacio = conservacio;
     }
 
 }

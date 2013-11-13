@@ -14,24 +14,82 @@ import java.util.*;
  */
 public class LlistaProductes {
     
-    private ArrayList <Producte> arrayproductes = new ArrayList<Producte>();
+    private int id;
+    private String nom;
+    private ArrayList<Integer> arrayproductes = new ArrayList();
     private int contaproductes = 0;
     
     public LlistaProductes(){};
     
-    public void AfegirProducte(Producte producte){
-        this.arrayproductes.add(producte);
-        this.contaproductes = arrayproductes.size();
+    public void AfegirProducte(int id){
+        this.getArrayproductes().add(id);
+        this.setContaproductes(getArrayproductes().size());
     }
     
     public void BorrarProductePosicio(int posicio){
-        this.arrayproductes.remove(posicio);
-        this.contaproductes = arrayproductes.size();
+        this.getArrayproductes().remove(posicio);
+        this.setContaproductes(getArrayproductes().size());
     }
     
-    public void BorrarProducte(Producte producte){
-        this.arrayproductes.remove(producte);
-        this.contaproductes = arrayproductes.size();
+    public void BorrarProducte(int idproducte){
+        this.getArrayproductes().remove(idproducte);
+        this.setContaproductes(getArrayproductes().size());
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @param nom the nom to set
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * @return the arrayproductes
+     */
+    public ArrayList<Integer> getArrayproductes() {
+        return arrayproductes;
+    }
+
+    /**
+     * @param arrayproductes the arrayproductes to set
+     */
+    public void setArrayproductes(ArrayList<Integer> arrayproductes) {
+        this.arrayproductes = arrayproductes;
+    }
+
+    /**
+     * @return the contaproductes
+     */
+    public int getContaproductes() {
+        return contaproductes;
+    }
+
+    /**
+     * @param contaproductes the contaproductes to set
+     */
+    public void setContaproductes(int contaproductes) {
+        this.contaproductes = contaproductes;
     }
     
 }

@@ -62,9 +62,9 @@ public class AlgoritmeFacil {
                     }
                     ++i;
                 }
-                ob.write("El min es ");
-                ob.write(min);
-                ob.write("\n");
+                //ob.write("El min es ");
+                //ob.write(min);
+                //ob.write("\n");
                 for(int j = 0; j < matriu.length; ++j){
                     if(or != j && !vis[j]){
                         if(min > matriu[or][j]){

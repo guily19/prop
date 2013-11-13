@@ -44,10 +44,10 @@ public class Graf {
                     return a.grau - b.grau;
                 }
         });
-        GrauMinim s = new GrauMinim();
-        for(int i = 0; i < matriu.length; ++i){
-            for(int j = 0; j < matriu.length; ++j){
-                if(i != j){
+        for(int i = 0; i <  matriusimetrica.length; ++i){
+            for(int j = 0; j < matriusimetrica.length; ++j){
+                if(i != j && i < j){
+                    GrauMinim s = new GrauMinim();
                     s.id1 = i;
                     s.id2 = j;
                     s.grau = this.matriusimetrica[i][j];
