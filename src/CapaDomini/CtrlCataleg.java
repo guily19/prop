@@ -16,10 +16,10 @@ import java.util.ArrayList;
  */
 public class CtrlCataleg {
     
-    private final ControladorDades ctrl;
-    private final ArrayList<Producte> productes;
-    private final ArrayList<LlistaProductes> llistes;
-    private final ArrayList<Prestatge> prestatges;
+    private ControladorDades ctrl;
+    private ArrayList<Producte> productes;
+    private ArrayList<LlistaProductes> llistes;
+    private ArrayList<Prestatge> prestatges;
     private int nextProd;
     private int nextLlis;
     private int nextPres;
