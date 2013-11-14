@@ -16,10 +16,11 @@ import java.util.ArrayList;
  */
 public class CtrlCataleg {
     
+    private InOut consola = new InOut();
     private ControladorDades ctrl;
     private ArrayList<Producte> productes;
     private ArrayList<LlistaProductes> llistes;
-    private ArrayList<Prestatge> prestatges;
+   // private ArrayList<Prestatge> prestatges;
     private int nextProd;
     private int nextLlis;
     private int nextPres;
@@ -30,7 +31,7 @@ public class CtrlCataleg {
     public CtrlCataleg(){
         productes = new ArrayList();
         llistes = new ArrayList();
-        prestatges = new ArrayList();
+        //prestatges = new ArrayList();
         ctrl = new ControladorDades();
         nextProd = 0;
         nextLlis = 0;
@@ -47,9 +48,9 @@ public class CtrlCataleg {
         return this.llistes;
     }
     
-    public ArrayList<Prestatge> getPrestatges(){
+   /* public ArrayList<Prestatge> getPrestatges(){
         return this.prestatges;
-    }
+    }*/
     
      /**
      * @return the nextProd
@@ -77,20 +78,22 @@ public class CtrlCataleg {
     public void setProducte(Producte p){
         int i = p.getId();
         if(i == nextProd) ++nextProd;
+        else productes.remove(i);
         productes.add(i,p);
     }
     
     public void setLlista(LlistaProductes ll){
         int i = ll.getId();
         if(i == nextLlis) ++nextLlis;
+        else llistes.remove(i);
         llistes.add(i,ll);
     }
     
-    public void setPrestatge(Prestatge p){
+   /* public void setPrestatge(Prestatge p){
         int i = p.getId();
         if(i == nextPres) ++nextPres;
         prestatges.add(i,p);
-    }
+    }*/
     
     //#####I/O a Fixers#####
     public void saveProductes() throws IOException{
@@ -128,7 +131,7 @@ public class CtrlCataleg {
         
     }
     
-    public void loadProductes() throws IOException{
+    public void loadProductes() throws IOException, Exception{
         ArrayList<String[]> aux = ctrl.readFile("./Dades/Productes.data");
         nextProd = aux.size();
         for(int i = 0; i < nextProd; ++i){
@@ -158,5 +161,4 @@ public class CtrlCataleg {
     public void loadPrestatges(){
     
     }
-
- 
+}
