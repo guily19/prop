@@ -22,7 +22,7 @@ import java.util.*;
         else return 3;
 }
     
-    public int[][] getSpannningTree(Graf graf){
+    public Graf getSpannningTree(Graf graf){
        PriorityQueue<GrauMinim> pq = graf.consultar_queue_minims();
        int N = graf.consultar_matriu().length;
        ArrayList<GrauMinim> llista = new ArrayList();
@@ -63,7 +63,8 @@ import java.util.*;
                pq.poll();
            }   
        }
-       return matriuResultat;
+       Graf sol = new Graf(matriuResultat);
+       return sol;
     }    
 }
 
