@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Toni
- * @version 2.0
+ * @version 2.5
  * 
  * ControladorDades controla les lectures i escritures a arxius
  * L'arxiu en el qual es vol llegir o escriure sempre ha de existir, en cas
@@ -90,10 +90,11 @@ public class ControladorDades {
      * Nom del arxiu
      * @throws IOException 
      */
-    public void writeLineFile(String[] params,int n, String file) throws IOException{
+    public void writeLineFile(String[] params, String file) throws IOException{
         FileWriter fw= new FileWriter(file,true);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter out = new PrintWriter(bw);
+        int n = params.length;
         out.print(params[0]);
         for(int i = 1; i < n; ++i) out.print(";" + params[i]);
         out.print("\n");
@@ -109,13 +110,14 @@ public class ControladorDades {
      * Nom de l'arxiu
      * @throws IOException 
      */
-    public void writeFile(ArrayList<String[]> params,int n, String file) throws
+    public void writeFile(ArrayList<String[]> params, String file) throws
     IOException{
         FileWriter fw= new FileWriter(file, false);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter out = new PrintWriter(bw);
         for (int i = 0; i < params.size(); ++i){
             out.print(params.get(i)[0]);
+            int n = params.get(i).length;
             for(int j = 1; j < n; ++j) out.print(";" + params.get(i)[j]);
             out.print("\n");
         }
@@ -130,7 +132,7 @@ public class ControladorDades {
  * @throws FileNotFoundException
  * @throws IOException 
  */
-    public void changeLineFile(String[] original, String[] param, int n,
+    public void changeLineFile(String[] original, String[] param,
     String file) throws FileNotFoundException, IOException{
         ArrayList<String[] > params = new ArrayList();
         FileReader fr = new FileReader(file);
@@ -138,6 +140,7 @@ public class ControladorDades {
         String s;
         while ((s=in.readLine()) != null){
             String[] aux= s.split(";");
+            int n = aux.length;
             boolean dif = false;
             for (int i = 0; i<n && !dif; ++i){
                 dif = (!aux[i].equals(original[i])); 
@@ -146,7 +149,7 @@ public class ControladorDades {
             else params.add(aux);
         }
         in.close();
-        writeFile(params,n,file);
+        writeFile(params,file);
         
     }
 }
