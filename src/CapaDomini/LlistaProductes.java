@@ -30,7 +30,7 @@ public class LlistaProductes {
      */
 
     
-    public void AfegirProducte(int id, ArrayList<Integer> arrayProducte){
+    public void AfegirProducte(int id){
         this.getArrayproductes().add(id,id);
         this.setContaproductes(getArrayproductes().size());
     }
