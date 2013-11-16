@@ -8,7 +8,6 @@ package CapaDomini;
 
 import CapaDades.ControladorDades;
 import java.io.IOException;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +22,7 @@ public class CtrlCataleg {
     private ArrayList<LlistaProductes> llistes;
     private ArrayList<ArrayList<Integer>> similituds;
     private final String path;
-   // private ArrayList<Prestatge> prestatges;
+    private ArrayList<Prestatge> prestatges;
     private int nextProd;
     private int nextLlis;
     private int nextPres;
@@ -36,7 +35,7 @@ public class CtrlCataleg {
         productes = new ArrayList();
         llistes = new ArrayList();
         path = name;
-        //prestatges = new ArrayList();
+        prestatges = new ArrayList();
         ctrl = new ControladorDades();
         similituds = new ArrayList();
         nextProd = 0;
@@ -54,9 +53,9 @@ public class CtrlCataleg {
         return this.llistes;
     }
     
-   /* public ArrayList<Prestatge> getPrestatges(){
+    public ArrayList<Prestatge> getPrestatges(){
         return this.prestatges;
-    }*/
+    }
     
     public ArrayList<ArrayList<Integer>> getSimilituds(){
         return similituds;
@@ -108,17 +107,53 @@ public class CtrlCataleg {
         llistes.add(i,ll);
     }
     
-   /* public void setPrestatge(Prestatge p){
+   public void setPrestatge(Prestatge p){
         int i = p.getId();
         if(i == nextPres) ++nextPres;
         prestatges.add(i,p);
-    }*/
+    }
+   
+   public void removeLlista(int id){
+       llistes.remove(id);
+       --nextLlis;
+       for(int i = id; i < nextLlis; ++i){
+           LlistaProductes ll = llistes.get(i);
+           ll.setId(ll.getId() - 1);
+           setLlista(ll);
+       }
+   }
+   
+   public void removePrestatge(int id){
+       prestatges.remove(id);
+       --nextPres;
+       for(int i = id; i < nextPres; ++i){
+           Prestatge p = prestatges.get(i);
+           p.setId(p.getId() - 1);
+           setPrestatge(p);
+       }
+   }
+   
+   public void removeProducte(int id){
+       similituds.remove(id);
+       for(int i = 0; i < nextProd - 1; ++i) similituds.get(i).remove(id);
+       productes.remove(id);
+       --nextProd;
+       for(int i = id; i < nextProd; ++i){
+           Producte p = productes.get(i);
+           p.setId(p.getId() - 1);
+           setProducte(p);
+       }
+   }
     
     //#####I/O a Fixers#####
     public void saveProductes() throws IOException{
         ArrayList<String[]> aux = new ArrayList();
+        ArrayList<String[]> sim = new ArrayList();
         for(int i = 0; i < nextProd; ++i){
             String[] s = new String[5];
+            String[]ss = new String[nextProd];
+            ArrayList<Integer> simil = similituds.get(i);
+            for(int j = 0; j < nextProd; ++j)ss[j] = Integer.toString(simil.get(j));
             Producte p = productes.get(i);
             s[0] = Integer.toString(p.getId());
             s[1] = p.getNom();
@@ -126,8 +161,10 @@ public class CtrlCataleg {
             s[3] = p.getSubtipus();
             s[4] = p.getConservacio();
             aux.add(s);
+            sim.add(ss);
         }
         ctrl.writeFile(aux, "./" + path +"/Productes.data");
+        ctrl.writeFile(sim, "./" + path +"/Graf.data");
     }
     
     public void saveLlistes() throws IOException{
@@ -146,8 +183,22 @@ public class CtrlCataleg {
         ctrl.writeFile(aux, "./"+path+"/Llistes.data");
     }
     
-    public void savePrestatges(){
-        
+    public void savePrestatges() throws IOException{
+        ArrayList<String[]> aux = new ArrayList();
+        for(int i = 0; i < nextPres; ++i){
+            Prestatge p = prestatges.get(i);
+            int n = p.getN();
+            String s[] = new String[n+5];
+            s[0] = Integer.toString(p.getId());
+            s[1] = p.getNom();
+            s[2] = Integer.toString(p.getIdllista());
+            s[3] = p.getConfiguracio().toString();
+            s[4] = Integer.toString(n);
+            ArrayList<Integer> ids = p.getProductos();
+            for(int j = 0; j < n; ++j) s[j+5] = Integer.toString(ids.get(j));
+            aux.add(s);
+        }
+        ctrl.writeFile(aux, "./" + path +"/Prestatges.data");
     }
     
     public void loadProductes() throws IOException, Exception{
@@ -184,7 +235,21 @@ public class CtrlCataleg {
         }
     }
     
-    public void loadPrestatges(){
-    
+    public void loadPrestatges() throws IOException, Exception{
+        ArrayList<String[]> aux = ctrl.readFile("./"+path+"/Prestatges.data");
+        nextPres = aux.size();
+        for(int i = 0; i < nextPres; ++i){
+            String[] s = aux.get(i);
+            int n = s.length;
+            Prestatge p = new Prestatge();
+            p.setId(Integer.parseInt(s[0]));
+            p.setNom(s[1]);
+            p.setIdLlista(Integer.parseInt(s[2]));
+            ArrayList<Integer> aux2 = new ArrayList();
+            p.setConfiguracio(Boolean.getBoolean(s[3]));
+            for(int j = 5; j < n; ++j) aux2.add(Integer.parseInt(s[j]));
+            p.setProductos(aux2);
+            prestatges.add(p);
+        }
     }
 }
