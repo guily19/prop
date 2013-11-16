@@ -18,21 +18,30 @@ public class LlistaProductes {
     private String nom;
     private ArrayList<Integer> arrayproductes = new ArrayList();
     private int contaproductes = 0;
-    
+
+    /**
+     * Tenim una nova instancia de LlistaProductes buida
+     */
     public LlistaProductes(){};
+
     
+
+
+    /**
+     * El objecte LlistaProductes ara disposa del identificador del producte amb identificador id
+     * @param id 
+     */
     public void AfegirProducte(int id){
         this.getArrayproductes().add(id);
         this.setContaproductes(getArrayproductes().size());
     }
     
-    public void BorrarProductePosicio(int posicio){
-        this.getArrayproductes().remove(posicio);
-        this.setContaproductes(getArrayproductes().size());
-    }
-    
+    /**
+     * El objecte LlistaProductes ja no disposa del identificador del producte amb identificador idproducte
+     * @param idproducte
+     */
     public void BorrarProducte(int idproducte){
-        this.getArrayproductes().remove(idproducte);
+        this.getArrayproductes().remove((Object)idproducte);
         this.setContaproductes(getArrayproductes().size());
     }
 

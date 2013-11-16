@@ -33,7 +33,7 @@ public class Graf {
     */
     
     
-    public Graf(){}
+    //public Graf(){}
     
     public Graf(int[][] matriu){
         this.matriusimetrica = matriu;
