@@ -15,10 +15,25 @@ import java.util.*;
 public class AlgoritmeFacil {
     private Graf graf;
     
+    
+    /**
+     * Tenim una nova instancia del objecte AlgoritmeFacil amb un Graf graf
+     * @param graf 
+     */
     public void AlgoritmeFacil(Graf graf){
         this.graf = graf;
     }
 
+    
+    /**
+     * Aquesta classe representa una posible solució de com ordenar els elements 
+     * de un graf segons el seu grau de relació amb la resta d’elements del graf. 
+     * Cada node del graf és un identificador d’un element i cada valor de cada 
+     * aresta del graf és el grau de rel·lació que te cada element amb el que està 
+     * lligat amb aquesta aresta.
+     * @return Retorna un ArrayList amb la posible solucio ordenada
+     * @throws Exception 
+     */
     public ArrayList <Integer> posible_solucio() throws Exception{
         ArrayList <Integer> sol = new ArrayList<Integer>();
         InOut ob = new InOut();
@@ -63,6 +78,9 @@ public class AlgoritmeFacil {
                 or = ds;
                 ++cont;
             }   
+        }
+        else{
+            sol.add(0);
         }
         return sol;
     }
