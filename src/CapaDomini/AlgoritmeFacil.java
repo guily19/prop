@@ -34,11 +34,11 @@ public class AlgoritmeFacil {
      * @return Retorna un ArrayList amb la posible solucio ordenada
      * @throws Exception 
      */
-    public ArrayList <Integer> posible_solucio() throws Exception{
+    public ArrayList <Integer> posibleSolucio() throws Exception{
         ArrayList <Integer> sol = new ArrayList<Integer>();
         InOut ob = new InOut();
-        int[][] matriu = graf.consultar_matriu();
-        PriorityQueue<GrauMinim> cua = graf.consultar_queue_minims();
+        int[][] matriu = graf.consultarMatriu();
+        PriorityQueue<GrauMinim> cua = graf.consultarQueueMinims();
         int cont;
         if(matriu.length > 1){
             int or = cua.element().id1;
