@@ -35,8 +35,8 @@ public class TrobarMinimSpanningTree {
     }
     
     public Graf getSpannningTree(Graf graf){
-       PriorityQueue<GrauMinim> pq = graf.consultar_queue_minims();
-       int N = graf.consultar_matriu().length;
+       PriorityQueue<GrauMinim> pq = graf.consultarQueueMinims();
+       int N = graf.consultarMatriu().length;
        ArrayList<GrauMinim> llista = new ArrayList();
        visitat = new boolean[N];
        int[][] matriuResultat = new int[N][N];
