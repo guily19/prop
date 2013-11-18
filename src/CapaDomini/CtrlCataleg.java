@@ -16,7 +16,6 @@ import java.util.ArrayList;
  */
 public class CtrlCataleg {
     
-    private final InOut consola = new InOut();
     private final ControladorDades ctrl;
     private ArrayList<Producte> productes;
     private ArrayList<LlistaProductes> llistes;
