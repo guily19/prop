@@ -31,7 +31,7 @@ public class LlistaProductes {
      * El objecte LlistaProductes ara disposa del identificador del producte amb identificador id
      * @param id 
      */
-    public void AfegirProducte(int id){
+    public void afegirProducte(int id){
         this.getArrayproductes().add(id);
         this.setContaproductes(getArrayproductes().size());
     }
@@ -40,7 +40,7 @@ public class LlistaProductes {
      * El objecte LlistaProductes ja no disposa del identificador del producte amb identificador idproducte
      * @param idproducte
      */
-    public void BorrarProducte(int idproducte){
+    public void borrarProducte(int idproducte){
         this.getArrayproductes().remove((Object)idproducte);
         this.setContaproductes(getArrayproductes().size());
     }

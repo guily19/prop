@@ -13,7 +13,9 @@ public class Prestatge {
     private int id;
     private String nom;
     private Boolean configuracio;
+    private int idllista;
     private ArrayList<Integer> productos = new ArrayList();
+    private int n;
     
     public int getId(){
         return id;
@@ -25,6 +27,10 @@ public class Prestatge {
     
     public Boolean getConfiguracio(){
         return configuracio;
+    }
+    
+    public int getIdllista(){
+        return idllista;
     }
     
     public ArrayList<Integer> getProductos(){
@@ -42,6 +48,10 @@ public class Prestatge {
         return -1;
     }
     
+    public int getN(){
+        return n;
+    }
+    
     public void setId(int id){
         this.id = id;
     }
@@ -54,7 +64,12 @@ public class Prestatge {
         this.configuracio = configuracio;
     }
     
+    public void setIdLlista(int i){
+        this.idllista = i;
+    }
+    
     public void setProductos(ArrayList<Integer> productos){
+        n = productos.size();
         this.productos = productos;
     }
     
