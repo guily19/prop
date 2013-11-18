@@ -33,7 +33,7 @@ public class TrobarMinimSpanningTree {
      * @param tamany es el tamany de la matriu
      * @param gm es el primer valor de la priorityqueue
      */
-    private void iniciar_Alg(int mat[][], int tamany, GrauMinim gm){
+    private void iniciarAlg(int mat[][], int tamany, GrauMinim gm){
         for(int j=0; j<tamany; ++j){ 
            visitat[j] = false; //Inicialitzacio del vector de booleans tot a false
            for(int k=0; k<tamany; ++k){
@@ -62,7 +62,7 @@ public class TrobarMinimSpanningTree {
        else{
         GrauMinim gm;
         gm = pq.peek();
-        iniciar_Alg(matriuResultat, N, gm);
+        iniciarAlg(matriuResultat, N, gm);
         pq.poll();
         while(!pq.isEmpty()){
             gm = pq.peek();
