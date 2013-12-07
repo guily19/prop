@@ -7,15 +7,14 @@ package CapaDomini;
 import java.util.ArrayList;
 /**
  *
- * @author Alfred
+ * @author toni
  */
 public class Prestatge {
     private int id;
     private String nom;
     private Boolean configuracio;
-    private int idllista;
-    private ArrayList<Integer> productos = new ArrayList();
-    private int n;
+    private LlistaProductes llista;
+    private ArrayList<Integer> solucio = new ArrayList();
     
     public int getId(){
         return id;
@@ -29,27 +28,12 @@ public class Prestatge {
         return configuracio;
     }
     
-    public int getIdllista(){
-        return idllista;
+    public LlistaProductes getLlista(){
+        return llista;
     }
     
-    public ArrayList<Integer> getProductos(){
-        return productos;
-    }
-    
-    public int getProductoId(int i){
-        return productos.get(i);
-    }
-    
-    public int getProductoPos(int x){
-        for(int i = 0;i < productos.size();++i){
-            if(productos.get(i) == x)return i;
-        }
-        return -1;
-    }
-    
-    public int getN(){
-        return n;
+    public ArrayList<Integer> getSolucio(){
+        return solucio;
     }
     
     public void setId(int id){
@@ -64,18 +48,18 @@ public class Prestatge {
         this.configuracio = configuracio;
     }
     
-    public void setIdLlista(int i){
-        this.idllista = i;
+    public void setLlista(LlistaProductes ll){
+        this.llista = ll;
     }
     
-    public void setProductos(ArrayList<Integer> productos){
-        n = productos.size();
-        this.productos = productos;
+    public void setSolucio(ArrayList<Integer> s){
+        this.solucio = s;
     }
     
-    public void itercanvi(int p1,int p2){
-        int aux = getProductoPos(p2);
-        productos.set(getProductoPos(p1), p2);
-        productos.set(aux, p1);
+    public void swap(int i,int j){
+        int x = solucio.get(i);
+        int y = solucio.get(j);
+        solucio.set(i,y);
+        solucio.set(j, x);
     }
 }
