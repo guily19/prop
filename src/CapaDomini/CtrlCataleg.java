@@ -108,21 +108,19 @@ public class CtrlCataleg {
         path = "./Cataleg/" + name + "/";
     }
     
-    public void setProducte(Producte p, ArrayList<Integer> sim){
+    public void setProducte(Producte p, ArrayList<Integer> sim, Boolean b){
         int id = p.getId();
         if(id == nextProd){
             ++nextProd;
-            sim.add(-1);
             similituds.add(sim);
         }
         else {
             productes.set(id,p);    
-            if(sim != null){
-                sim.add(id,-1);
+            if(b){
                 similituds.set(id, sim);
             }
         }
-        if(sim != null){
+        if(b){
             for(int i = 0; i < nextProd; ++i) similituds.get(id).set(id, sim.get(i));
         }
     }
@@ -259,7 +257,7 @@ public class CtrlCataleg {
         ctrl.writeFile(list, path +"Dades/Prestatges.data");
     }
     
-    private void loadProductes() throws IOException{
+    public void loadProductes() throws IOException{
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Productes.data");
         int n = aux.size();
         nextProd = Integer.parseInt(aux.get(n-1)[0]);
@@ -281,7 +279,7 @@ public class CtrlCataleg {
         }
     }
     
-    private void loadLlistes() throws IOException{
+    public void loadLlistes() throws IOException{
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Llistes.data");
         int m = aux.size();
         nextLlis  = Integer.parseInt(aux.get(m-1)[0]);
@@ -304,7 +302,7 @@ public class CtrlCataleg {
         }
     }
     
-    private void loadPrestatges() throws IOException, Exception{
+    public void loadPrestatges() throws IOException, Exception{
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Prestatges.data");
         int m = aux.size();
         nextPres  = Integer.parseInt(aux.get(m-1)[0]);
