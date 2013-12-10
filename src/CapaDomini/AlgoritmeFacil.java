@@ -38,12 +38,13 @@ public class AlgoritmeFacil {
         ArrayList <Integer> sol = new ArrayList<Integer>();
         InOut ob = new InOut();
         int[][] matriu = graf.consultarMatriu();
-        PriorityQueue<GrauMinim> cua = graf.consultarQueueMinims();
+        PriorityQueue<GrauMinim> cua = new PriorityQueue<GrauMinim>();
+        cua = graf.consultarQueueMinims();
         int cont;
         if(matriu.length > 1){
             int or = cua.element().id1;
             int ds = cua.element().id2;
-            cua.poll();
+            //cua.poll();   Estava descomentat
             sol.add(or);
             sol.add(ds);
             cont = 2;

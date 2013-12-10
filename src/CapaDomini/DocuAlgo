@@ -1,0 +1,31 @@
+Classe AlgoritmeFacil:
+
+Explicació de la classe:
+
+	Aquesta classe representa una posible solució de com ordenar els elements de un graf segons el seu grau de relació amb la resta d’elements del graf. Cada node del graf és un identificador d’un element i cada valor de cada aresta del graf és el grau de rel·lació que te cada element amb el que està lligat amb aquesta aresta.
+
+Explicació del algorisme:
+
+	L’Algorisme comença a recorrer el graf desde el node que te el identificador més petit que s’uneix a un altre node amb la aresta de menys pes de tot el graf.
+
+	Nodes n1 i n2 i Aresta a1 tals que a1 es la més petita de tot el graf
+
+Un cop trobada aquesta primera aresta, i per tant el primer node origen i destí, es visitarà el següent node no visitat que estigui lligat amb el node destí de la iteració anterior per la aresta amb minim pes.
+
+	Nodes n2 i n3 i Aresta a2 tals que a2 es la més petita de que surt de n2 i a2 != a1
+
+Així succesivament fins haver visitat tots els nodes.
+
+Atributs:
+
+	private Graf graf
+Mètodes:
+
+	public void AlgoritmeFacil(Graf graf)
+	pre: el Graf graf es valid.
+	post: el graf de la clase es igual al graf que ha entrat per parametre
+
+	public ArrayList <Integer> posible_solucio()
+	pre: cert
+	post: posible_solució retorna un ArrayList amb els elements del Graf graf, ordenats de tal manera que desde el node i fins al node j hi ha el valor mínim i desde el node j anirem fins al seguent node posible amb valor minim sense repetir nodes.
+

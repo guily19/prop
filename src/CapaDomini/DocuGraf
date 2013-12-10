@@ -1,0 +1,36 @@
+Classe Graf:
+
+Aquesta clase representa un conjunt de elements juntament amb el grau de relació que te cada element del conjunt amb la resta d’elements de conjunt.
+
+Atributs:
+private int[][] matriusimetrica;
+private PriorityQueue <GrausMinims>camins_minims;
+
+Mètodes:
+public Graf(int[ ][ ] matriu)
+pre: cert
+post: Tenim un objecte Graf G amb una matriusimetrica = matriu[ ][ ] i una cua camins_minims amb els elements de matriusimètrica;
+
+public int[ ][ ] consultar_matriu ()
+pre: cert
+post: Retorna la matriu matriusimetrica del Objecte.
+
+ public PriorityQueue consultar_queue_minims()
+pre: cert
+post: Retorna la queue de prioritats camins_minims.
+
+
+Com podeu comprovar he tret el Mètode:
+
+--------afegir_element();
+--------Graf();
+--------llegir_graf();
+
+1)
+Perqué no hi habia manera de fer un push_back en java de manera eficient i a més a més ningú del meu grup o utilitzava.
+
+2, 3)
+No és necessari ja que al graf se li tindrà que pasar la matriu ja llegida perqué llegir la matriu ho ha de fer la Capa Grafica.
+
+Si algú te alguna cosa a dir al respecte que m'ho fagi saber i tornaré a posar aquests metodes per tal de no perjudicar la resta del
+cluster.
