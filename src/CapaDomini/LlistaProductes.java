@@ -16,7 +16,7 @@ public class LlistaProductes {
     
     private int id;
     private String nom;
-    private ArrayList<Integer> arrayproductes = new ArrayList();
+    private ArrayList<Producte> arrayproductes = new ArrayList();
     private int contaproductes = 0;
 
     /**
@@ -31,8 +31,8 @@ public class LlistaProductes {
      * El objecte LlistaProductes ara disposa del identificador del producte amb identificador id
      * @param id 
      */
-    public void afegirProducte(int id){
-        this.getArrayproductes().add(id);
+    public void afegirProducte(Producte p){
+        this.getArrayproductes().add(p);
         this.setContaproductes(getArrayproductes().size());
     }
     
@@ -40,8 +40,8 @@ public class LlistaProductes {
      * El objecte LlistaProductes ja no disposa del identificador del producte amb identificador idproducte
      * @param idproducte
      */
-    public void borrarProducte(int idproducte){
-        this.getArrayproductes().remove((Object)idproducte);
+    public void borrarProducte(Producte p){
+        this.getArrayproductes().remove((Object)p);
         this.setContaproductes(getArrayproductes().size());
     }
 
@@ -76,14 +76,14 @@ public class LlistaProductes {
     /**
      * @return the arrayproductes
      */
-    public ArrayList<Integer> getArrayproductes() {
+    public ArrayList<Producte> getArrayproductes() {
         return arrayproductes;
     }
 
     /**
      * @param arrayproductes the arrayproductes to set
      */
-    public void setArrayproductes(ArrayList<Integer> arrayproductes) {
+    public void setArrayproductes(ArrayList<Producte> arrayproductes) {
         this.arrayproductes = arrayproductes;
     }
 

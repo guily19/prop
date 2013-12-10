@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class CrtlAlgorismes {
     private Graf graf;
     private ArrayList <Integer> solucio = new ArrayList();
+    //private AlgoritmeFacil algfacil = new AlgoritmeFacil();
+    //private TrobarMinimSpanningTree algofase1 = new TrobarMinimSpanningTree();
     
     
     
@@ -37,9 +39,8 @@ public class CrtlAlgorismes {
         AlgoritmeFacil algfacil = new AlgoritmeFacil();
         algfacil.AlgoritmeFacil(graf);
         solucio = algfacil.posibleSolucio();
-        //ob.write("Fins aqui tot de wais");
-        //AlgFase3 algfase3 = new AlgFase3(solucio, graf.consultar_matriu());
-        //solucio = algfase3.getResultat();
+        AlgFase3 algfase3 = new AlgFase3(solucio, graf.consultarMatriu());
+        solucio = algfase3.getResult();
         return solucio;
     }
     
@@ -55,8 +56,9 @@ public class CrtlAlgorismes {
         TrobarMinimSpanningTree algofase1 = new TrobarMinimSpanningTree();
         Graf mst = algofase1.getSpannningTree(graf);
         AlgFase2 algfase2 = new AlgFase2(mst, graf);
-        //AlgFase3 algfase3= new AlgFase3(solucio, graf.consultar_matriu());
         solucio = algfase2.getSolution();
+        AlgFase3 algfase3= new AlgFase3(solucio, graf.consultarMatriu());
+        solucio = algfase3.getResult();
         return solucio;
     }
     
