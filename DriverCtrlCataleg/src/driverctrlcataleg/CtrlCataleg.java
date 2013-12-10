@@ -128,34 +128,34 @@ public class CtrlCataleg {
     }
     
     public void setLlista(LlistaProductes ll){
-        if(ll.getId() == nextLlis) ++nextLlis;
-        llistes.add(ll);
+        int i = ll.getId();
+        if(i == nextLlis) ++nextLlis;
+        llistes.set(i,ll);
     }
     
    public void setPrestatge(Prestatge p){
         int i = p.getId();
         if(i == nextPres) ++nextPres;
-        prestatges.add(p);
+        prestatges.set(i,p);
     }
    
-   public void removeLlista(LlistaProductes ll){
-       llistes.remove(ll);
+   public void removeLlista(int id){
+       llistes.set(id,null);
    }
    
-   public void removePrestatge(Prestatge p){
-       prestatges.remove(p);
+   public void removePrestatge(int id){
+       prestatges.set(id,null);
    }
    
-   public void removeProducte(Producte p){
-       productes.remove(p);
+   public void removeProducte(int id){
+       productes.set(id,null);
    }
     
     //#####I/O a Fixers#####
     public void saveProductes() throws IOException{
         ArrayList<String[]> aux = new ArrayList();
         ArrayList<String[]> sim = new ArrayList();
-        int n = productes.size();
-        for(int i = 0; i < n; ++i){
+        for(int i = 0; i < nextProd; ++i){
             String[] s = new String[5];
             for(int j = 0; j< 5; ++j) s[j] = " ";
             String[]ss = new String[nextProd];
@@ -172,9 +172,6 @@ public class CtrlCataleg {
             aux.add(s);
             sim.add(ss);
         }
-        String[] s = new String[1];
-        s[0] = Integer.toString(nextProd);
-        aux.add(s);
         ctrl.writeFile(aux, path +"Dades/Productes.data");
         ctrl.writeFile(sim, path +"Dades/Graf.data");
     }
@@ -182,9 +179,9 @@ public class CtrlCataleg {
     public void saveLlistes() throws IOException{
         ArrayList<String[]> aux = new ArrayList();
         ArrayList<String[]> list = new ArrayList();
-        int m = llistes.size();
-        for(int i = 0; i < m; ++i){
+        for(int i = 0; i < nextLlis; ++i){
             LlistaProductes ll = llistes.get(i);
+            if(ll != null){
                 String[] s = new String[3];
                 String[] ss = new String[1];
                 s[0] = Integer.toString(ll.getId());
@@ -206,20 +203,18 @@ public class CtrlCataleg {
                 aux.add(s);
                 list.add(ss);
                 ctrl.writeFile(aux,path + "Dades/" + s[1] + ".list");
+            }
             aux.clear();
         }
-        String[] s = new String[1];
-        s[0] = Integer.toString(nextLlis);
-        list.add(s);
         ctrl.writeFile(list, path+"Dades/Llistes.data");
     }
     
     public void savePrestatges() throws IOException{
         ArrayList<String[]> aux = new ArrayList();
         ArrayList<String[]> list = new ArrayList();
-        int m = prestatges.size();
-        for(int i = 0; i < m; ++i){
+        for(int i = 0; i < nextPres; ++i){
             Prestatge p = prestatges.get(i);
+            if(p != null){
                 String[] prest = new String[3];
                 String[] llista = new String[3];
                 String[] nom = new String[1];
@@ -251,19 +246,16 @@ public class CtrlCataleg {
                 for(int j = 0; j < n; ++j) ss[j] = Integer.toString(ids.get(j));
                 aux.add(ss);
                 ctrl.writeFile(aux, path + "Dades/" + nom[0] + ".prest");
+            }
             aux.clear();
         }
-        String[] s = new String[1];
-        s[0] = Integer.toString(nextPres);
-        list.add(s);
         ctrl.writeFile(list, path +"Dades/Prestatges.data");
     }
     
     private void loadProductes() throws IOException{
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Productes.data");
-        int n = aux.size();
-        nextProd = Integer.parseInt(aux.get(n-1)[0]);
-        for(int i = 0; i < n - 1; ++i){
+        nextProd = aux.size();
+        for(int i = 0; i < nextProd; ++i){
             String[] s = aux.get(i);
             Producte p;
             if(!s[0].equals(" ")){
@@ -283,13 +275,11 @@ public class CtrlCataleg {
     
     private void loadLlistes() throws IOException{
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Llistes.data");
-        int m = aux.size();
-        nextLlis  = Integer.parseInt(aux.get(m-1)[0]);
-        for(int i = 0; i < m-1; ++i){
+        for(int i = 0; i < aux.size(); ++i){
             String file = aux.get(i)[0];
             ArrayList<String[]> param = ctrl.readFile(path + "Dades/" + file + ".list");
             LlistaProductes ll = new LlistaProductes();
-            ll.setId(Integer.parseInt(param.get(0)[0]));
+            ll.setId(nextLlis = Integer.parseInt(param.get(0)[0]));
             ll.setNom(param.get(0)[1]);
             int n;
             ll.setContaproductes(n= Integer.parseInt(param.get(0)[2]));
@@ -306,13 +296,11 @@ public class CtrlCataleg {
     
     private void loadPrestatges() throws IOException, Exception{
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Prestatges.data");
-        int m = aux.size();
-        nextPres  = Integer.parseInt(aux.get(m-1)[0]);
-        for(int i = 0; i < m-1; ++i){
+        for(int i = 0; i < nextPres; ++i){
             String file = aux.get(i)[0];
             ArrayList<String[]> param = ctrl.readFile(path + "Dades/" + file + ".prest");
             Prestatge p = new Prestatge();
-            p.setId(Integer.parseInt(param.get(0)[0]));
+            p.setId(nextPres = Integer.parseInt(param.get(0)[0]));
             p.setNom(param.get(0)[1]);
             p.setConfiguracio(Boolean.parseBoolean(param.get(0)[2]));
             LlistaProductes ll = new LlistaProductes();
