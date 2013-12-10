@@ -68,8 +68,17 @@ public class CtrlCataleg {
     }
     
     public ArrayList<ArrayList<Integer>> getSimilitudsLlista(LlistaProductes ll){
-        ArrayList<Integer> 
-        
+        int n = ll.getContaproductes();
+        ArrayList<Integer> ids = new ArrayList();
+        ArrayList<Producte> prod = ll.getArrayproductes();
+        for(int i = 0; i < n; ++i) ids.add(prod.get(i).getId());
+        ArrayList<ArrayList<Integer>> sim = new ArrayList();
+        for(int i = 0; i < n; ++i){
+            ArrayList<Integer> aux = new ArrayList();
+            for(int j = 0; j< n; ++j) aux.add(similituds.get(ids.get(i)).get(ids.get(j)));
+            sim.add(aux);
+        }
+        return sim;
     }
     
      /**
