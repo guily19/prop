@@ -1,23 +1,18 @@
-package CapaDomini;
-
-import java.util.PriorityQueue;
-import java.util.ArrayList;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+package CapaDomini;
+
+import java.util.*;
+
 /**
  *
  * @author guillem
  */
 public class DriverComplet {
-    /**
-     * @param args the command line arguments
-     * 
-     */
     private static void escriure_matriu(int[][] mat) throws Exception{
         InOut ob = new InOut();
         ob.write("Escric la matriu: \n");
@@ -45,7 +40,6 @@ public class DriverComplet {
             cua.poll();
         }
     }
-    
     private static void llegir_matriu(int[][]mat) throws Exception{
         InOut ob = new InOut();
         for(int i = 0; i <  mat.length; ++i){
@@ -55,17 +49,9 @@ public class DriverComplet {
         }
     }
     
-    public static void main(String[] args) throws Exception {
+    private static void escriure_array_int(ArrayList <Integer> sol) throws Exception{
         InOut ob = new InOut();
-        int tam = ob.readint();
-        int[][] matriu = new int[tam][tam];
-        llegir_matriu(matriu);
-        Graf graf1 = new Graf(matriu);
-        AlgoritmeFacil alg = new AlgoritmeFacil();
-        alg.AlgoritmeFacil(graf1);
-        ArrayList <Integer> sol = new ArrayList<Integer>();
-        sol = alg.posibleSolucio();
-        int i =0;
+        int i = 0;
         while(i < sol.size()){
             int n = sol.get(i);
             ob.write(n);
@@ -74,4 +60,78 @@ public class DriverComplet {
         }
     }
     
+    public static void main(String[] args) throws Exception {
+        InOut ob = new InOut();
+        
+        ArrayList <Integer>solucio;
+        ob.write("Per tal de llegir la matriu de similituds haurà d'escriure totes les similituds d'un producte amb la resta\n");
+        ob.write("Format: -1 2 3\n        2 -1 4\n        3 4 -1\n");
+        ob.write("Llegim la Matriu: \n");
+        CtrlCataleg cc = new CtrlCataleg();
+        cc.setPath("Default");
+        cc.loadProductes();
+        ArrayList<ArrayList <Integer> > mat = cc.getSimilituds();
+        int tam = mat.size();
+        int[][] matriu = new int[tam][tam];
+        for(int i = 0; i < tam; ++i){
+            for(int j = 0; j < tam; ++j){
+                matriu[i][j] = mat.get(i).get(j);
+            }
+        }
+        Graf graf2 = new Graf(matriu);
+        CrtlAlgorismes c = new CrtlAlgorismes(graf2);
+        //escriure_priorityqueue(graf2.consultarQueueMCntrlAlgorismesinims());
+        ob.write("Indiqui una opcio: \n");
+        ob.write("1.Executar Algorisme Fàcil \n");
+        ob.write("2.Executar Algorisme mes Complex \n");
+        ob.write("3.Tornar a llegir la matriu \n");
+        ob.write("4.Sortir \n");
+        int caso = ob.readint();
+        while(caso != 4){
+            switch(caso){
+                case 1:{
+                    graf2 = new Graf(matriu);
+                    c = new CrtlAlgorismes(graf2);
+                    solucio = c.executarAlgoritme1();
+                    ob.write("Solucio Facil: \n");
+                    escriure_array_int(solucio);
+                    ob.write("\n");
+                    //ob.write("Suma total de graus: \n");
+                    break;
+                }
+                case 2:{
+                    graf2 = new Graf(matriu);
+                    c = new CrtlAlgorismes(graf2);
+                    solucio = c.executarAlgoritme2();
+                    ob.write("Solucio més complexa: \n");
+                    escriure_array_int(solucio);
+                    ob.write("\n");
+                    break;
+                }
+                case 3:{
+                    ob.write("Indiqui el nimero de productes que vol posar al prestatge: ");
+                    tam = ob.readint();
+                    matriu = new int[tam][tam];
+                    ob.write("Per tal de llegir la matriu de similituds haurà d'escriure totes les similituds d'un producte amb la resta \n");
+                    ob.write("Format: -1 2 3\n        2 -1 4\n       3 4 -1\n");
+                    ob.write("Llegim la Matriu: \n");
+                    llegir_matriu(matriu);
+                    graf2 = new Graf(matriu);
+                    matriu2 = graf2.consultarMatriu();
+                    c = new CrtlAlgorismes(graf2);
+                    break;
+                }
+                case 4:{
+                    break;
+                }
+            }
+
+            ob.write("Indiqui una opcio: \n");
+            ob.write("1.Executar Algorisme Fàcil \n");
+            ob.write("2.Executar Algorisme mes Complex \n");
+            ob.write("3.Tornar a llegir la matriu \n");
+            ob.write("4.Sortir \n");
+            caso = ob.readint();
+        }
+    }
 }
