@@ -78,6 +78,7 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jButton1.action(CreacioPrestatge.AccessibleJPanel, evt);
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1ActionPerformed
