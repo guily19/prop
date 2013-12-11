@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 
-package CapaDomini;
+package Drivers;
 
+import CapaDomini.InOut;
+import CapaDomini.LlistaProductes;
 import java.util.PriorityQueue;
 import java.util.ArrayList;
 

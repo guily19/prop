@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 
-package CapaDomini;
+package Drivers;
 
+import CapaDomini.CrtlAlgorismes;
+import CapaDomini.CtrlCataleg;
+import CapaDomini.Graf;
+import CapaDomini.GrauMinim;
+import CapaDomini.InOut;
 import java.util.*;
 
 /**

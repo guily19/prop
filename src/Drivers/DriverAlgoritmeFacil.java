@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 
-package CapaDomini;
+package Drivers;
 
+import CapaDomini.AlgoritmeFacil;
+import CapaDomini.Graf;
+import CapaDomini.InOut;
 import java.util.ArrayList;
 
 /**
