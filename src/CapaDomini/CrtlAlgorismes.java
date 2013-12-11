@@ -39,8 +39,6 @@ public class CrtlAlgorismes {
         AlgoritmeFacil algfacil = new AlgoritmeFacil();
         algfacil.AlgoritmeFacil(graf);
         solucio = algfacil.posibleSolucio();
-        AlgFase3 algfase3 = new AlgFase3(solucio, graf.consultarMatriu());
-        solucio = algfase3.getResult();
         return solucio;
     }
     
@@ -57,7 +55,11 @@ public class CrtlAlgorismes {
         Graf mst = algofase1.getSpannningTree(graf);
         AlgFase2 algfase2 = new AlgFase2(mst, graf);
         solucio = algfase2.getSolution();
-        AlgFase3 algfase3= new AlgFase3(solucio, graf.consultarMatriu());
+        return solucio;
+    }
+    
+    public ArrayList <Integer> executarMillora(ArrayList <Integer> mi) throws Exception{
+        AlgFase3 algfase3= new AlgFase3(mi, graf.consultarMatriu());
         solucio = algfase3.getResult();
         return solucio;
     }

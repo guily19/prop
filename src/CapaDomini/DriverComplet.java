@@ -117,7 +117,7 @@ public class DriverComplet {
                     ob.write("Llegim la Matriu: \n");
                     llegir_matriu(matriu);
                     graf2 = new Graf(matriu);
-                    matriu2 = graf2.consultarMatriu();
+                    //matriu2 = graf2.consultarMatriu();
                     c = new CrtlAlgorismes(graf2);
                     break;
                 }

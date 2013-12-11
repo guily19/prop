@@ -65,7 +65,7 @@ public class DriverCntrlAlgorismes {
         ob.write("Indiqui el número de productes que vol posar al prestatge: ");
         int tam = ob.readint();
         int[][] matriu = new int[tam][tam];
-        ArrayList <Integer>solucio;
+        ArrayList <Integer>solucio = null;
         ob.write("Per tal de llegir la matriu de similituds haurà d'escriure totes les similituds d'un producte amb la resta\n");
         ob.write("Format: -1 2 3\n        2 -1 4\n        3 4 -1\n");
         ob.write("Llegim la Matriu: \n");
@@ -77,10 +77,11 @@ public class DriverCntrlAlgorismes {
         ob.write("Indiqui una opcio: \n");
         ob.write("1.Executar Algorisme Fàcil \n");
         ob.write("2.Executar Algorisme mes Complex \n");
-        ob.write("3.Tornar a llegir la matriu \n");
-        ob.write("4.Sortir \n");
+        ob.write("3.Executar Millora \n");
+        ob.write("4.Tornar a llegir la matriu \n");
+        ob.write("5.Sortir \n");
         int caso = ob.readint();
-        while(caso != 4){
+        while(caso != 5){
             switch(caso){
                 case 1:{
                     graf2 = new Graf(matriu);
@@ -102,6 +103,18 @@ public class DriverCntrlAlgorismes {
                     break;
                 }
                 case 3:{
+                    graf2 = new Graf(matriu);
+                    c = new CrtlAlgorismes(graf2);
+                    if(solucio == null) ob.write("Primer has de executar un algorisme \n");
+                    else{
+                        solucio = c.executarMillora(solucio);
+                        ob.write("Solucio més complexa: \n");
+                        escriure_array_int(solucio);
+                        ob.write("\n");
+                    }
+                    break;
+                }
+                case 4:{
                     ob.write("Indiqui el nimero de productes que vol posar al prestatge: ");
                     tam = ob.readint();
                     matriu = new int[tam][tam];
@@ -114,7 +127,7 @@ public class DriverCntrlAlgorismes {
                     c = new CrtlAlgorismes(graf2);
                     break;
                 }
-                case 4:{
+                case 5:{
                     break;
                 }
             }
@@ -122,8 +135,9 @@ public class DriverCntrlAlgorismes {
             ob.write("Indiqui una opcio: \n");
             ob.write("1.Executar Algorisme Fàcil \n");
             ob.write("2.Executar Algorisme mes Complex \n");
-            ob.write("3.Tornar a llegir la matriu \n");
-            ob.write("4.Sortir \n");
+            ob.write("3.Executar Millora \n");
+            ob.write("4.Tornar a llegir la matriu \n");
+            ob.write("5.Sortir \n");
             caso = ob.readint();
         }
     }
