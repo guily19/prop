@@ -125,16 +125,23 @@ public class CtrlCataleg {
         }
     }
     
-    public void setLlista(LlistaProductes ll){
-        if(ll.getId() == nextLlis) ++nextLlis;
-        llistes.add(ll);
+    public void setLlista(int i ,LlistaProductes ll){
+        llistes.set(i,ll);
     }
     
-   public void setPrestatge(Prestatge p){
-        int i = p.getId();
-        if(i == nextPres) ++nextPres;
-        prestatges.add(p);
+   public void setPrestatge(int i, Prestatge p){
+        prestatges.set(i,p);
     }
+   
+   public void addLlista(LlistaProductes ll){
+       llistes.add(ll);
+       ++nextLlis;
+   }
+   
+   public void addPrestatge(Prestatge p){
+       prestatges.add(p);
+       ++nextPres;
+   }
    
    public void removeLlista(LlistaProductes ll){
        llistes.remove(ll);

@@ -9,6 +9,7 @@ package CapaGrafica;
 
 import CapaDomini.CrtlAlgorismes;
 import CapaDomini.CtrlCataleg;
+import CapaDomini.Graf;
 import CapaDomini.LlistaProductes;
 import CapaDomini.Prestatge;
 import CapaDomini.Producte;
@@ -31,6 +32,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         CreacioPrestatge.setVisible(false);
         ModificarCataleg.setVisible(false);
         PrestatgeCarregat.setVisible(false);
+        VisulitzadorPrestatge.setVisible(false);
+        SeleccionPrestatge.setVisible(false);
         ctrl = new CtrlCataleg();
         ctrl.setPath("Default");
         try {
@@ -94,6 +97,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jList4 = new javax.swing.JList();
         jButton9 = new javax.swing.JButton();
+        VisulitzadorPrestatge = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList5 = new javax.swing.JList();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        SeleccionPrestatge = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jList8 = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,30 +143,30 @@ public class VistaPrincipal extends javax.swing.JFrame {
         PanelPrincipalLayout.setHorizontalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(407, Short.MAX_VALUE)
                 .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CarregarPrestatgeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CrearPrestatgeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modificarCatalegButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(71, 71, 71))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))))
+                            .addComponent(modificarCatalegButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addComponent(CrearPrestatgeButton)
                 .addGap(18, 18, 18)
                 .addComponent(CarregarPrestatgeButton)
                 .addGap(18, 18, 18)
                 .addComponent(modificarCatalegButton)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Llistes");
@@ -444,6 +461,127 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         .addGap(82, 82, 82))))
         );
 
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        jLabel3.setText("jLabel3");
+
+        jList5.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(jList5);
+
+        jLabel12.setText("jLabel12");
+
+        jLabel13.setText("Els productes queden ordenats aixi:");
+
+        jLabel14.setText("Productes");
+
+        jButton1.setText("Salvar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Exportar a PDF");
+
+        jButton3.setText("Intercanviar posicións");
+
+        javax.swing.GroupLayout VisulitzadorPrestatgeLayout = new javax.swing.GroupLayout(VisulitzadorPrestatge);
+        VisulitzadorPrestatge.setLayout(VisulitzadorPrestatgeLayout);
+        VisulitzadorPrestatgeLayout.setHorizontalGroup(
+            VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
+                        .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jLabel12))
+                            .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel13)))
+                        .addGap(0, 154, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(29, 29, 29))
+            .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addGap(321, 321, 321)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+        VisulitzadorPrestatgeLayout.setVerticalGroup(
+            VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel12))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
+        );
+
+        jLabel15.setText("Prestatge a carregar:");
+
+        jList8.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jList8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList8MouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(jList8);
+
+        javax.swing.GroupLayout SeleccionPrestatgeLayout = new javax.swing.GroupLayout(SeleccionPrestatge);
+        SeleccionPrestatge.setLayout(SeleccionPrestatgeLayout);
+        SeleccionPrestatgeLayout.setHorizontalGroup(
+            SeleccionPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SeleccionPrestatgeLayout.createSequentialGroup()
+                .addGroup(SeleccionPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SeleccionPrestatgeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel15))
+                    .addGroup(SeleccionPrestatgeLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+        SeleccionPrestatgeLayout.setVerticalGroup(
+            SeleccionPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SeleccionPrestatgeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -457,18 +595,38 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(PrestatgeCarregat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 27, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(VisulitzadorPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SeleccionPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 268, Short.MAX_VALUE))
+                .addGap(0, 280, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(CreacioPrestatge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(ModificarCataleg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(PrestatgeCarregat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(VisulitzadorPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SeleccionPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -511,10 +669,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void CarregarPrestatgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarregarPrestatgeButtonActionPerformed
-        this.PanelPrincipal.setVisible(false);
-        this.PrestatgeCarregat.setVisible(false);
-        this.CreacioPrestatge.setVisible(true);
-        this.ModificarCataleg.setVisible(false);
+        ArrayList<Prestatge> prestatges = ctrl.getPrestatges();
+        int n = prestatges.size();
+        String[] model = new String[n];
+        for(int i = 0; i < n; ++i) model[i] = prestatges.get(i).getNom();
+        jList8.setListData(model);
+        SeleccionPrestatge.setVisible(true);
+        PanelPrincipal.setVisible(false);
+        this.pack();
     }//GEN-LAST:event_CarregarPrestatgeButtonActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -557,8 +719,85 @@ public class VistaPrincipal extends javax.swing.JFrame {
         pres.setId(ctrl.getNextPres());
         pres.setLlista(ctrl.getLlistes().get(jList6.getSelectedIndex()));
         pres.setNom(jTextField1.getText());
-        
+        pres.setConfiguracio(false);
+        ArrayList<ArrayList<Integer> > mat = ctrl.getSimilitudsLlista(pres.getLlista());
+        int tam = mat.size();
+        int[][] matriu = new int[tam][tam];
+        for(int i = 0; i < tam; ++i){
+            for(int j = 0; j < tam; ++j){
+                matriu[i][j] = mat.get(i).get(j);
+            }
+        }
+        Graf graf2 = new Graf(matriu);
+        CrtlAlgorismes alg = new CrtlAlgorismes(graf2);
+        ArrayList<Integer> sol = new ArrayList();
+        if(jComboBox1.getSelectedIndex() == 0) try {
+            sol = alg.executarAlgoritme1();
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        else try {
+            sol = alg.executarAlgoritme2();
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(jCheckBox2.isSelected()) try {
+            sol = alg.executarMillora(sol);
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String s = new String();
+        String[] prod = new String[tam];
+        for(int i = 0; i < tam; ++i){
+            Producte p = pres.getLlista().getArrayproductes().get(i);
+            sol.set(i, p.getId());
+            s = s.concat(sol.get(i) + " ");
+            prod[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+        }
+        pres.setSolucio(sol);
+        jLabel3.setText(pres.getNom());
+        jLabel12.setText(s);
+        jList5.setListData(prod);
+        CreacioPrestatge.setVisible(false);
+        VisulitzadorPrestatge.setVisible(true);
+        b = true;
+        this.pack();
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+       if(b) ctrl.addPrestatge(pres);
+       else ctrl.setPrestatge(aux, pres);
+        try {
+            ctrl.savePrestatges();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        VisulitzadorPrestatge.setVisible(false);
+        PanelPrincipal.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jList8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList8MouseClicked
+        // TODO add your handling code here:
+         pres = ctrl.getPrestatges().get(aux = jList8.getSelectedIndex());
+        int tam = pres.getLlista().getContaproductes();
+        ArrayList<Integer> sol = pres.getSolucio();
+        String s = new String();
+        String[] prod = new String[tam];
+        for(int i = 0; i < tam; ++i){
+            Producte p = pres.getLlista().getArrayproductes().get(i);
+            s = s.concat(sol.get(i) + " ");
+            prod[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+        }
+        jLabel3.setText(pres.getNom());
+        jLabel12.setText(s);
+        jList5.setListData(prod);
+        SeleccionPrestatge.setVisible(false);
+        VisulitzadorPrestatge.setVisible(true);
+        b = false;
+        this.pack();
+    }//GEN-LAST:event_jList8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -608,9 +847,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel ModificarCataleg;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel PrestatgeCarregat;
+    private javax.swing.JPanel SeleccionPrestatge;
+    private javax.swing.JPanel VisulitzadorPrestatge;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -623,7 +867,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -634,18 +883,23 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JList jList2;
     private javax.swing.JList jList3;
     private javax.swing.JList jList4;
+    private javax.swing.JList jList5;
     private javax.swing.JList jList6;
     private javax.swing.JList jList7;
+    private javax.swing.JList jList8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton modificarCatalegButton;
     // End of variables declaration//GEN-END:variables
    private CtrlCataleg ctrl;
-   private CrtlAlgorismes algoritme;
    private Prestatge pres;
+   private int aux;
+   private Boolean b;
 }
