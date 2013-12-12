@@ -6,7 +6,9 @@
 
 package CapaGrafica;
 
+
 import javax.swing.JPanel;
+import CapaDomini.CtrlCataleg;
 
 /**
  *
@@ -18,6 +20,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
      * Creates new form VistaPrincipal
      */
     public VistaPrincipal() {
+        CtrlCataleg cc = new CtrlCataleg();
         initComponents();
     }
 
@@ -32,9 +35,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         PanelPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        CrearPrestatgeButton = new javax.swing.JButton();
+        CarregarPrestatgeButton = new javax.swing.JButton();
+        modificarCatalegButton = new javax.swing.JButton();
         CreacioPrestatge = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -83,19 +86,24 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 0, 24)); // NOI18N
         jLabel1.setText("SUPERMERCAT");
 
-        jButton1.setText("Crear Prestatge");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CrearPrestatgeButton.setText("Crear Prestatge");
+        CrearPrestatgeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CrearPrestatgeButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Carregar Prestatge");
-
-        jButton3.setText("Modificar Catàleg");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        CarregarPrestatgeButton.setText("Carregar Prestatge");
+        CarregarPrestatgeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                CarregarPrestatgeButtonActionPerformed(evt);
+            }
+        });
+
+        modificarCatalegButton.setText("Modificar Catàleg");
+        modificarCatalegButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarCatalegButtonActionPerformed(evt);
             }
         });
 
@@ -108,29 +116,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
                         .addGap(258, 258, 258)
                         .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(modificarCatalegButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CrearPrestatgeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CarregarPrestatgeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGap(206, 206, 206)
+                        .addGap(272, 272, 272)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButton1)
-                .addGap(42, 42, 42)
-                .addComponent(jButton2)
+                .addGap(47, 47, 47)
+                .addComponent(CrearPrestatgeButton)
                 .addGap(41, 41, 41)
-                .addComponent(jButton3)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addComponent(CarregarPrestatgeButton)
+                .addGap(41, 41, 41)
+                .addComponent(modificarCatalegButton)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Llistes");
@@ -216,9 +221,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
                                     .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
                                         .addGap(20, 20, 20)
                                         .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane6)
                                             .addComponent(jLabel2)
-                                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))))))
                         .addGap(0, 0, 0)
                         .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
@@ -244,7 +249,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jCheckBox1)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         CreacioPrestatgeLayout.setVerticalGroup(
             CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +283,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
                     .addComponent(jButton10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                 .addComponent(jButton14)
                 .addContainerGap())
         );
@@ -311,6 +316,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Productes Llista");
 
         jButton4.setText("Afegir");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Treure");
 
@@ -321,6 +331,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jButton8.setText("Modificar");
 
         jButton15.setText("Enrere");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ModificarCatalegLayout = new javax.swing.GroupLayout(ModificarCataleg);
         ModificarCataleg.setLayout(ModificarCatalegLayout);
@@ -336,25 +351,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addGap(62, 62, 62)
                 .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ModificarCatalegLayout.createSequentialGroup()
-                        .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton8)
-                            .addComponent(jButton7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton8)
+                    .addComponent(jButton7)
+                    .addComponent(jButton6)
+                    .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jButton15)
-                        .addGap(46, 46, 46))
-                    .addGroup(ModificarCatalegLayout.createSequentialGroup()
-                        .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ModificarCatalegLayout.createSequentialGroup()
-                                .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
-                                .addGap(40, 40, 40)
-                                .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton6))
-                        .addContainerGap(125, Short.MAX_VALUE))))
+                        .addGroup(ModificarCatalegLayout.createSequentialGroup()
+                            .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel5))
+                            .addGap(40, 40, 40)
+                            .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         ModificarCatalegLayout.setVerticalGroup(
             ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,19 +383,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jButton6))
-                .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ModificarCatalegLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
-                        .addContainerGap(15, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarCatalegLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton15)
-                        .addGap(30, 30, 30))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ModificarCatalegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8)
+                .addGap(18, 18, 18)
+                .addComponent(jButton15)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("DejaVu Sans", 0, 24)); // NOI18N
@@ -407,11 +413,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGroup(PrestatgeCarregatLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(PrestatgeCarregatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton9)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                    .addGroup(PrestatgeCarregatLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PrestatgeCarregatLayout.createSequentialGroup()
+                        .addComponent(jButton9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))))
         );
         PrestatgeCarregatLayout.setVerticalGroup(
             PrestatgeCarregatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,12 +429,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGroup(PrestatgeCarregatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PrestatgeCarregatLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PrestatgeCarregatLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jButton9)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                        .addComponent(jButton9)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PrestatgeCarregatLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -434,53 +444,43 @@ public class VistaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreacioPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(CreacioPrestatge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(ModificarCataleg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(340, 340, 340)
-                    .addComponent(ModificarCataleg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(341, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(340, 340, 340)
                     .addComponent(PrestatgeCarregat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(341, Short.MAX_VALUE)))
+                    .addGap(0, 27, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 118, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreacioPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(CreacioPrestatge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(189, 189, 189)
-                    .addComponent(ModificarCataleg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(190, Short.MAX_VALUE)))
+                .addComponent(ModificarCataleg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(189, 189, 189)
-                    .addComponent(PrestatgeCarregat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(190, Short.MAX_VALUE)))
+                .addComponent(PrestatgeCarregat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CrearPrestatgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearPrestatgeButtonActionPerformed
         this.PanelPrincipal.setVisible(false);
+        this.ModificarCataleg.setVisible(false);
+        this.PrestatgeCarregat.setVisible(false);
         this.CreacioPrestatge.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CrearPrestatgeButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void modificarCatalegButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarCatalegButtonActionPerformed
         this.PanelPrincipal.setVisible(false);
-        this.CreacioPrestatge.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        this.PrestatgeCarregat.setVisible(false);
+        this.CreacioPrestatge.setVisible(false);
+        this.ModificarCataleg.setVisible(true);
+    }//GEN-LAST:event_modificarCatalegButtonActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -494,6 +494,23 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.PanelPrincipal.setVisible(true);
         this.CreacioPrestatge.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void CarregarPrestatgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarregarPrestatgeButtonActionPerformed
+        this.PanelPrincipal.setVisible(false);
+        this.PrestatgeCarregat.setVisible(false);
+        this.CreacioPrestatge.setVisible(true);
+        this.ModificarCataleg.setVisible(false);
+    }//GEN-LAST:event_CarregarPrestatgeButtonActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        this.PanelPrincipal.setVisible(true);
+        this.ModificarCataleg.setVisible(false);
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+          
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -525,6 +542,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VistaPrincipal().setVisible(true);
+                
             }
         });
         
@@ -532,19 +550,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CarregarPrestatgeButton;
     private javax.swing.JPanel CreacioPrestatge;
+    private javax.swing.JButton CrearPrestatgeButton;
     private javax.swing.JPanel ModificarCataleg;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel PrestatgeCarregat;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -579,6 +596,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton modificarCatalegButton;
     // End of variables declaration//GEN-END:variables
     private JPanel panel;
 }
