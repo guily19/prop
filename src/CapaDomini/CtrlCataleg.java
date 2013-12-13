@@ -51,6 +51,10 @@ public class CtrlCataleg {
         return this.catalegs;
     }
     
+    public ArrayList<String> getPruebas(){
+        return pruebas;
+    }
+    
     public ArrayList<Producte> getProductes(){
         return this.productes;
     }
@@ -165,7 +169,7 @@ public class CtrlCataleg {
        for(i = 0; i < n&& (!find); ++i) find = (llistes.get(i).getNom().equals(nomLlis));
        Prestatge sol = new Prestatge();
        sol.setNom(param.get(1)[0]);
-       sol.setLlista(llistes.get(i));
+       sol.setLlista(llistes.get(i - 1));
        alg = Integer.parseInt(param.get(2)[0]);
        opt = Integer.parseInt(param.get(2)[1]);
        return sol;
@@ -366,6 +370,6 @@ public class CtrlCataleg {
     public void loadPruebas() throws IOException{
         ArrayList<String[]> out = ctrl.readFile(path + "JP/jp.data");
          int n = out.size();
-         for(int i = 0; i < n; ++i) catalegs.add(out.get(i)[0]);
+         for(int i = 0; i < n; ++i) pruebas.add(out.get(i)[0]);
     }
 }

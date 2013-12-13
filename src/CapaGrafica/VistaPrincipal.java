@@ -29,20 +29,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
      */
     public VistaPrincipal() throws Exception {
         initComponents();
+        PanelPrincipal.setVisible(false);
         CreacioPrestatge.setVisible(false);
         ModificarCataleg.setVisible(false);
         PrestatgeCarregat.setVisible(false);
         VisulitzadorPrestatge.setVisible(false);
         SeleccionPrestatge.setVisible(false);
+        SeleccionJP.setVisible(false);
         ctrl = new CtrlCataleg();
-        ctrl.setPath("Default");
-        try {
-            ctrl.loadLlistes();
-        } catch (IOException ex) {
-            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ctrl.loadPrestatges();
-        ctrl.loadProductes();
+        ctrl.loadCatalegs();
+        jList10.setListData(ctrl.getCatalegs().toArray());
         this.pack();
     }
 
@@ -112,6 +108,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jList8 = new javax.swing.JList();
+        SeleccionJP = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jList9 = new javax.swing.JList();
+        jButton11 = new javax.swing.JButton();
+        Inicio = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jList10 = new javax.swing.JList();
+        jButton12 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,7 +186,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addComponent(CarregarPrestatgeButton)
                 .addGap(18, 18, 18)
                 .addComponent(modificarCatalegButton)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Llistes");
@@ -596,6 +602,102 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
+        jLabel16.setText("Seleccione un archivo:");
+
+        jList9.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane9.setViewportView(jList9);
+
+        jButton11.setText("Ejecutar");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SeleccionJPLayout = new javax.swing.GroupLayout(SeleccionJP);
+        SeleccionJP.setLayout(SeleccionJPLayout);
+        SeleccionJPLayout.setHorizontalGroup(
+            SeleccionJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SeleccionJPLayout.createSequentialGroup()
+                .addGroup(SeleccionJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SeleccionJPLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel16)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(SeleccionJPLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton11)))
+                .addContainerGap())
+            .addGroup(SeleccionJPLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+        SeleccionJPLayout.setVerticalGroup(
+            SeleccionJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SeleccionJPLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel16)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SeleccionJPLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton11)
+                .addContainerGap())
+        );
+
+        jLabel17.setText("Bienvenid@ a nuestro progama, seleccione catalago:");
+
+        jList10.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane10.setViewportView(jList10);
+
+        jButton12.setText("Empezar");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout InicioLayout = new javax.swing.GroupLayout(Inicio);
+        Inicio.setLayout(InicioLayout);
+        InicioLayout.setHorizontalGroup(
+            InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InicioLayout.createSequentialGroup()
+                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InicioLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(98, 98, 98)
+                        .addComponent(jButton12))
+                    .addGroup(InicioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel17)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        InicioLayout.setVerticalGroup(
+            InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InicioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17)
+                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InicioLayout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jButton12))
+                    .addGroup(InicioLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -619,6 +721,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(SeleccionPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SeleccionJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,6 +752,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(SeleccionPrestatge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SeleccionJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -815,7 +937,95 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void CrearPrestatgeButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearPrestatgeButton1ActionPerformed
         // TODO add your handling code here:
+        jList9.setListData(ctrl.getPruebas().toArray());
+        for(int i = 0; i < ctrl.getPruebas().size(); ++i)System.out.print(ctrl.getPruebas().get(i));
+        SeleccionJP.setVisible(true);
+        PanelPrincipal.setVisible(false);
+        this.pack();
     }//GEN-LAST:event_CrearPrestatgeButton1ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        int algo = 0;
+        int opt = 0;
+        try {
+            pres = ctrl.execJP(ctrl.getPruebas().get(jList9.getSelectedIndex()), algo, opt);
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ArrayList<ArrayList<Integer> > mat = ctrl.getSimilitudsLlista(pres.getLlista());
+        int tam = mat.size();
+        int[][] matriu = new int[tam][tam];
+        for(int i = 0; i < tam; ++i){
+            for(int j = 0; j < tam; ++j){
+                matriu[i][j] = mat.get(i).get(j);
+            }
+        }
+        Graf graf2 = new Graf(matriu);
+        CrtlAlgorismes alg = new CrtlAlgorismes(graf2);
+        ArrayList<Integer> sol = new ArrayList();
+        if(algo == 0) try {
+            sol = alg.executarAlgoritme1();
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        else try {
+            sol = alg.executarAlgoritme2();
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(opt == 1) try {
+            sol = alg.executarMillora(sol);
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String s = new String();
+        String[] prod = new String[tam];
+        for(int i = 0; i < tam; ++i){
+            Producte p = pres.getLlista().getArrayproductes().get(i);
+            sol.set(i, p.getId());
+            s = s.concat(sol.get(i) + " ");
+            prod[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+        }
+        pres.setId(ctrl.getNextPres());
+        pres.setConfiguracio(false);
+        pres.setSolucio(sol);
+        jLabel3.setText(pres.getNom());
+        jLabel12.setText(s);
+        jList5.setListData(prod);
+        SeleccionJP.setVisible(false);
+        VisulitzadorPrestatge.setVisible(true);
+        b = true;
+        this.pack();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        ctrl.setPath(ctrl.getCatalegs().get(jList10.getSelectedIndex()));
+        try {
+            ctrl.loadLlistes();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ctrl.loadPrestatges();
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ctrl.loadProductes();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ctrl.loadPruebas();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Inicio.setVisible(false);
+        PanelPrincipal.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -863,13 +1073,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel CreacioPrestatge;
     private javax.swing.JButton CrearPrestatgeButton;
     private javax.swing.JButton CrearPrestatgeButton1;
+    private javax.swing.JPanel Inicio;
     private javax.swing.JPanel ModificarCataleg;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel PrestatgeCarregat;
+    private javax.swing.JPanel SeleccionJP;
     private javax.swing.JPanel SeleccionPrestatge;
     private javax.swing.JPanel VisulitzadorPrestatge;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
@@ -890,6 +1104,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -899,6 +1115,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList jList1;
+    private javax.swing.JList jList10;
     private javax.swing.JList jList2;
     private javax.swing.JList jList3;
     private javax.swing.JList jList4;
@@ -906,7 +1123,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JList jList6;
     private javax.swing.JList jList7;
     private javax.swing.JList jList8;
+    private javax.swing.JList jList9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -914,6 +1133,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton modificarCatalegButton;
     // End of variables declaration//GEN-END:variables
