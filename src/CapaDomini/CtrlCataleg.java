@@ -36,7 +36,7 @@ public class CtrlCataleg {
         productes = new ArrayList();
         llistes = new ArrayList();
         pruebas = new ArrayList();
-        path = "./Cataleg/";
+        path = System.getProperty("user.dir") + "/Cataleg/";
         prestatges = new ArrayList();
         ctrl = new ControladorDades();
         similituds = new ArrayList();
