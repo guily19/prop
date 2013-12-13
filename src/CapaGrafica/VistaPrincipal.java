@@ -60,6 +60,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         CrearPrestatgeButton = new javax.swing.JButton();
         CarregarPrestatgeButton = new javax.swing.JButton();
         modificarCatalegButton = new javax.swing.JButton();
+        CrearPrestatgeButton1 = new javax.swing.JButton();
         CreacioPrestatge = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -117,7 +118,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 0, 24)); // NOI18N
         jLabel1.setText("SUPERMERCAT");
 
-        CrearPrestatgeButton.setText("Crear Prestatge");
+        CrearPrestatgeButton.setText("Crear Prestatge por Interfaz");
         CrearPrestatgeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CrearPrestatgeButtonActionPerformed(evt);
@@ -138,6 +139,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        CrearPrestatgeButton1.setText("Crear Prestatge por Fichero");
+        CrearPrestatgeButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearPrestatgeButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
         PanelPrincipalLayout.setHorizontalGroup(
@@ -148,11 +156,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CarregarPrestatgeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CrearPrestatgeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(modificarCatalegButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CrearPrestatgeButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CrearPrestatgeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelPrincipalLayout.setVerticalGroup(
@@ -160,8 +172,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(30, 30, 30)
                 .addComponent(CrearPrestatgeButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CrearPrestatgeButton1)
                 .addGap(18, 18, 18)
                 .addComponent(CarregarPrestatgeButton)
                 .addGap(18, 18, 18)
@@ -799,6 +813,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_jList8MouseClicked
 
+    private void CrearPrestatgeButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearPrestatgeButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CrearPrestatgeButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -844,6 +862,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton CarregarPrestatgeButton;
     private javax.swing.JPanel CreacioPrestatge;
     private javax.swing.JButton CrearPrestatgeButton;
+    private javax.swing.JButton CrearPrestatgeButton1;
     private javax.swing.JPanel ModificarCataleg;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel PrestatgeCarregat;

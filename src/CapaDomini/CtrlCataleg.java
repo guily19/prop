@@ -156,6 +156,21 @@ public class CtrlCataleg {
    }
     
     //#####I/O a Fixers#####
+   public Prestatge execJP(String file,int alg, int opt) throws IOException{
+       ArrayList<String[]> param= ctrl.readFile(path + "JP/" + file + ".jp");
+       String nomLlis = param.get(0)[0];
+       int n = llistes.size();
+       Boolean find = false;
+       int i;
+       for(i = 0; i < n&& (!find); ++i) find = (llistes.get(i).getNom().equals(nomLlis));
+       Prestatge sol = new Prestatge();
+       sol.setNom(param.get(1)[0]);
+       sol.setLlista(llistes.get(i));
+       alg = Integer.parseInt(param.get(2)[0]);
+       opt = Integer.parseInt(param.get(2)[1]);
+       return sol;
+   }
+   
     public void saveProductes() throws IOException{
         ArrayList<String[]> aux = new ArrayList();
         ArrayList<String[]> sim = new ArrayList();
