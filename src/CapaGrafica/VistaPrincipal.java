@@ -142,6 +142,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jScrollPane11.setViewportView(jList11);
 
         jButton9.setText("Intercanviar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout swapProductesLayout = new javax.swing.GroupLayout(swapProductes.getContentPane());
         swapProductes.getContentPane().setLayout(swapProductesLayout);
@@ -527,7 +532,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jButton2.setText("Exportar a PDF");
 
-        jButton3.setText("Intercanviar posicións");
+        jButton3.setText("Intercanviar posicions");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -1058,8 +1063,25 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        ArrayList<Integer> ids = pres.getSolucio();
+        int n = ids.size();
+        String[] model = new String[n];
+        for(int i = 0; i < n; ++i) model[i] ="pos: " + i + "->" + ids.get(i);
+        jList4.setListData(model);
+        jList11.setListData(model);
         swapProductes.setVisible(true);
+        swapProductes.pack();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        pres.swap(jList4.getSelectedIndex(), jList11.getSelectedIndex());
+        String s = new String();
+        for(int i = 0; i < pres.getSolucio().size(); ++ i) s = s.concat(pres.getSolucio().get(i) + " ");
+        jLabel12.setText(s);
+        jLabel12.repaint();
+        swapProductes.setVisible(false);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
