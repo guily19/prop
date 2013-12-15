@@ -38,10 +38,10 @@ public class ctrlPDF {
         addEmptyLine(preface, 1);
         String param = new String();
         for(int i = 0; i < p.getSolucio().size(); ++i) param = param.concat(p.getSolucio().get(i) + " ");
-        preface.add(new Paragraph("Orden del prestatge: ",catFont));
+        preface.add(new Paragraph("Orden del prestatge: ",smallBold));
         preface.add(new Paragraph(param, smallBold));
         addEmptyLine(preface, 3);
-        preface.add(new Paragraph("Lista de productos: " , catFont));
+        preface.add(new Paragraph("Lista de productos: " , smallBold));
         param = "";
         for(int i = 0; i < p.getSolucio().size(); ++i){
             Producte prod = p.getLlista().getArrayproductes().get(i);

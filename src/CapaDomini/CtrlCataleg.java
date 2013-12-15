@@ -217,6 +217,7 @@ public class CtrlCataleg {
                 ss[0] = s[1];
                 int n;
                 s[2] = Integer.toString(n = ll.getContaproductes());
+                aux.add(s);
                 ArrayList<Producte> aux2 = ll.getArrayproductes();
                 for(int j = 0; j < n; ++j){
                     String[] prod = new String[5];
@@ -228,7 +229,6 @@ public class CtrlCataleg {
                     prod[4] = p.getConservacio();
                     aux.add(prod);
                 }
-                aux.add(s);
                 list.add(ss);
                 ctrl.writeFile(aux,path + "Dades/" + s[1] + ".list");
             aux.clear();
@@ -285,6 +285,8 @@ public class CtrlCataleg {
     }
     
     public void loadProductes() throws IOException{
+        productes.clear();
+        similituds.clear();
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Productes.data");
         int n = aux.size();
         nextProd = Integer.parseInt(aux.get(n-1)[0]);
@@ -307,6 +309,7 @@ public class CtrlCataleg {
     }
     
     public void loadLlistes() throws IOException{
+        llistes.clear();
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Llistes.data");
         int m = aux.size();
         nextLlis  = Integer.parseInt(aux.get(m-1)[0]);
@@ -330,6 +333,7 @@ public class CtrlCataleg {
     }
     
     public void loadPrestatges() throws IOException, Exception{
+        prestatges.clear();
         ArrayList<String[]> aux = ctrl.readFile(path+"Dades/Prestatges.data");
         int m = aux.size();
         nextPres  = Integer.parseInt(aux.get(m-1)[0]);
