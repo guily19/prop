@@ -115,6 +115,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
         SeleccionPrestatge = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -157,6 +158,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox();
+        jButton23 = new javax.swing.JButton();
 
         jLabel7.setText("Producte 1:");
 
@@ -219,7 +221,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 0, 24)); // NOI18N
         jLabel1.setText("SUPERMERCAT");
 
-        CrearPrestatgeButton.setText("Crear Prestatge por Interfaz");
+        CrearPrestatgeButton.setText("Crear Prestatge per Interficie");
         CrearPrestatgeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CrearPrestatgeButtonActionPerformed(evt);
@@ -487,6 +489,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
 
         jButton20.setText("Modificar");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ModificarCatalegLayout = new javax.swing.GroupLayout(ModificarCataleg);
         ModificarCataleg.setLayout(ModificarCatalegLayout);
@@ -557,7 +564,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton8))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarCatalegLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                                 .addComponent(jButton15)
                                 .addGap(20, 20, 20))))))
         );
@@ -595,6 +602,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton24.setText("Enrere");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout VisulitzadorPrestatgeLayout = new javax.swing.GroupLayout(VisulitzadorPrestatge);
         VisulitzadorPrestatge.setLayout(VisulitzadorPrestatgeLayout);
         VisulitzadorPrestatgeLayout.setHorizontalGroup(
@@ -624,6 +638,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
@@ -647,7 +663,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton24))
                 .addContainerGap())
         );
 
@@ -879,6 +896,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         );
 
         jList14.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList14MouseClicked(evt);
+            }
+        });
         jScrollPane14.setViewportView(jList14);
 
         jLabel24.setText("Nom:");
@@ -897,7 +919,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jLabel22.setText("Similitud:");
 
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+
         jButton21.setText("Cambiar");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jButton22.setText("Vale");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -907,6 +936,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ambient", "Refrigerat", "Congelat" }));
+
+        jButton23.setText("Enrere");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout modificarProducteLayout = new javax.swing.GroupLayout(modificarProducte);
         modificarProducte.setLayout(modificarProducteLayout);
@@ -937,6 +973,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, modificarProducteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton22)
                 .addContainerGap())
         );
@@ -970,7 +1008,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton21))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(jButton22)
+                .addGroup(modificarProducteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton22)
+                    .addComponent(jButton23))
                 .addContainerGap())
         );
 
@@ -1122,7 +1162,22 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-          
+        b = true;
+        auxiliar = new ArrayList();
+        producte = new Producte();
+        producte.setId(ctrl.getNextProd());
+        ArrayList<Producte> productes = ctrl.getProductes();
+        int n = productes.size();
+        String[] model = new String[n];
+        for (int i = 0; i < n; ++i){
+            Producte p = productes.get(i);
+            model[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+            auxiliar.add(5);
+        };
+        jList14.setListData(model);
+        ModificarCataleg.setVisible(false);
+        modificarProducte.setVisible(true);
+        this.pack();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jList6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList6MouseClicked
@@ -1521,7 +1576,86 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
+        producte.setNom(jTextField3.getText());
+        producte.setTipus(jTextField4.getText());
+        producte.setSubtipus(jTextField5.getText());
+        producte.setConservacio((String)jComboBox2.getSelectedItem());
+        if(b) auxiliar.add(-1);
+       else auxiliar.add(producte.getId(), -1);
+            ctrl.setProducte(producte, auxiliar);
+        try {
+            ctrl.saveProductes();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ctrl.loadProductes();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ArrayList<Producte> productes = ctrl.getProductes();
+        int n = productes.size();
+        String[] model = new String[n];
+        for (int i = 0; i < n; ++i){
+            Producte p = productes.get(i);
+            model[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+        };
+        jList1.setListData(model);
+        modificarProducte.setVisible(false);
+        ModificarCataleg.setVisible(true);
+        this.pack();
     }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        producte = ctrl.getProductes().get(aux = jList1.getSelectedIndex());
+        auxiliar = ctrl.getSimilituds().get(aux);
+        auxiliar.remove(aux);
+        jTextField3.setText(producte.getNom());
+        jTextField4.setText(producte.getTipus());
+        jTextField5.setText(producte.getSubtipus());
+         ArrayList<Producte> productes = ctrl.getProductes();
+        int n = productes.size();
+        String[] model = new String[n - 1];
+        for (int i = 0; i < n; ++i){
+             if(i != aux){
+                Producte p = productes.get(i);
+                int x =  i;
+                if(i > aux) x = i -1;
+                model[x] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+             }
+        };
+        jList14.setListData(model);
+        b = false;
+        ModificarCataleg.setVisible(false);
+        modificarProducte.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jList14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList14MouseClicked
+        // TODO add your handling code here:
+        int i = jList14.getSelectedIndex();
+        jSpinner1.setValue(auxiliar.get(i));
+    }//GEN-LAST:event_jList14MouseClicked
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+        auxiliar.set(jList14.getSelectedIndex(),(int) jSpinner1.getValue());
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        modificarProducte.setVisible(false);
+        ModificarCataleg.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        // TODO add your handling code here:
+      CreacioPrestatge.setVisible(true);
+      VisulitzadorPrestatge.setVisible(false);
+      this.pack();
+    }//GEN-LAST:event_jButton24ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1590,6 +1724,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1672,6 +1808,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
    private Prestatge pres;
    private LlistaProductes llis;
    private Producte producte;
+   private ArrayList<Integer> auxiliar;
    private int aux;
    private Boolean b;
 }

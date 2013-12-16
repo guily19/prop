@@ -113,20 +113,18 @@ public class CtrlCataleg {
         path = "./Cataleg/" + name + "/";
     }
     
-    public void setProducte(Producte p, ArrayList<Integer> sim, Boolean b){
+    public void setProducte(Producte p, ArrayList<Integer> sim){
         int id = p.getId();
         if(id == nextProd){
             ++nextProd;
+            for(int i = 0; i < nextProd - 1; ++i) similituds.get(i).add(id, sim.get(i));
             similituds.add(sim);
+            productes.add(p);
         }
         else {
+            for(int i = 0; i < nextProd; ++i) similituds.get(i).set(id, sim.get(i));
             productes.set(id,p);    
-            if(b){
-                similituds.set(id, sim);
-            }
-        }
-        if(b){
-            for(int i = 0; i < nextProd; ++i) similituds.get(id).set(id, sim.get(i));
+            similituds.set(id, sim);
         }
     }
     
