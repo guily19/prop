@@ -183,9 +183,6 @@ public class CtrlCataleg {
         for(int i = 0; i < n; ++i){
             String[] s = new String[5];
             for(int j = 0; j< 5; ++j) s[j] = " ";
-            String[]ss = new String[nextProd];
-            ArrayList<Integer> simil = similituds.get(i);
-            for(int j = 0; j < nextProd; ++j)ss[j] = Integer.toString(simil.get(j));
             Producte p = productes.get(i);
             if(p != null){
                 s[0] = Integer.toString(p.getId());
@@ -195,6 +192,11 @@ public class CtrlCataleg {
                 s[4] = p.getConservacio();
             }
             aux.add(s);
+        }
+        for(int i = 0; i < nextProd; ++i){
+            String[]ss = new String[nextProd];
+            ArrayList<Integer> simil = similituds.get(i);
+            for(int j = 0; j < nextProd; ++j)ss[j] = Integer.toString(simil.get(j));
             sim.add(ss);
         }
         String[] s = new String[1];
