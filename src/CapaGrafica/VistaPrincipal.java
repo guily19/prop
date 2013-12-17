@@ -1256,7 +1256,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         String[] prod = new String[tam];
         for(int i = 0; i < tam; ++i){
             Producte p = pres.getLlista().getArrayproductes().get(i);
-            sol.set(i, p.getId());
+            Boolean trobat = false;
+            sol.set(i,pres.getLlista().getArrayproductes().get(sol.get(i)).getId());
             s[0] = s[0].concat(sol.get(i) + " ");
             prod[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
         }
@@ -1333,7 +1334,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         String[] prod = new String[tam];
         for(int i = 0; i < tam; ++i){
             Producte p = pres.getLlista().getArrayproductes().get(i);
-            sol.set(i, p.getId());
+            sol.set(i,pres.getLlista().getArrayproductes().get(sol.get(i)).getId());
             s[0] = s[0].concat(sol.get(i) + " ");
             prod[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
         }
