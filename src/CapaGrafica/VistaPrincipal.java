@@ -355,12 +355,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
                                 .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2))
-                                .addGap(63, 63, 63)
+                                .addGap(37, 37, 37)
                                 .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
                                     .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(45, 45, 45)
+                                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(28, 28, 28)
                                         .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
                                                 .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,7 +371,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
                                                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addComponent(jButton10)
                                             .addComponent(jCheckBox1)
-                                            .addComponent(jCheckBox2)))))
+                                            .addComponent(jCheckBox2)))
+                                    .addComponent(jLabel8)))
                             .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
                                 .addGap(262, 262, 262)
                                 .addComponent(jLabel9)))
@@ -388,9 +388,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(CreacioPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(CreacioPrestatgeLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
@@ -613,39 +613,40 @@ public class VistaPrincipal extends javax.swing.JFrame {
         VisulitzadorPrestatgeLayout.setHorizontalGroup(
             VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
-                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3))
-                    .addComponent(jLabel13))
-                .addGap(35, 35, 35)
-                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addGap(29, 29, 29))
-            .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
-                .addGap(321, 321, 321)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
+            .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
+                .addGap(409, 409, 409)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         VisulitzadorPrestatgeLayout.setVerticalGroup(
             VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VisulitzadorPrestatgeLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(VisulitzadorPrestatgeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
@@ -654,8 +655,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addGroup(VisulitzadorPrestatgeLayout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton3)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -1288,7 +1289,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void CrearPrestatgeButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearPrestatgeButton1ActionPerformed
         // TODO add your handling code here:
         jList9.setListData(ctrl.getPruebas().toArray());
-        for(int i = 0; i < ctrl.getPruebas().size(); ++i)System.out.print(ctrl.getPruebas().get(i));
         SeleccionJP.setVisible(true);
         PanelPrincipal.setVisible(false);
         this.pack();
@@ -1346,6 +1346,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jList5.setListData(prod);
         SeleccionJP.setVisible(false);
         VisulitzadorPrestatge.setVisible(true);
+        ArrayList<LlistaProductes> llistes = ctrl.getLlistes();
+        int n = llistes.size();
+        String[] model = new String[n];
+        for (int i = 0; i < n; ++i)model[i] = llistes.get(i).getNom();
+        jList6.setListData(model);
         b = true;
         this.pack();
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -1457,6 +1462,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         llis = new LlistaProductes();
         llis.setId(ctrl.getNextLlis());
+        llis.setArrayproductes(new ArrayList<Producte>());
         b = true;
         ArrayList<Producte> productes = ctrl.getProductes();
         int n = productes.size();
@@ -1503,15 +1509,22 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
         ArrayList<Producte> productes = llis.getArrayproductes();
-        productes.add(ctrl.getProductes().get(jList12.getSelectedIndex()));
-        llis.setArrayproductes(productes);
-        int n = productes.size();
-        String[] s = new String[n];
-        for(int i = 0; i< productes.size(); ++i){
-            Producte p = productes.get(i);
-            s[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+        Producte produ = ctrl.getProductes().get(jList12.getSelectedIndex());
+        Boolean trobat = false;
+        for(int i = 0; i < productes.size()&&!trobat; ++i){
+            if (productes.get(i).getId() == produ.getId()) trobat = true;
         }
-        jList13.setListData(s);
+        if(!trobat){
+            productes.add(produ);
+            llis.setArrayproductes(productes);
+            int n = productes.size();
+            String[] s = new String[n];
+            for(int i = 0; i< productes.size(); ++i){
+                Producte p = productes.get(i);
+                s[i] = "ID: " + Integer.toString(p.getId()) + "   Nom: " + p.getNom() + "    Tipus: " + p.getTipus() + "    Subtipus: " + p.getSubtipus();
+            }
+            jList13.setListData(s);
+        }
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -1681,6 +1694,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         // TODO add your handling code here:
+      jTextField1.setText(pres.getNom());
       CreacioPrestatge.setVisible(true);
       VisulitzadorPrestatge.setVisible(false);
       this.pack();
